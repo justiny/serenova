@@ -1,0 +1,7 @@
+{% if post.get_field('products_options') == 'Link' %}
+  <a href="{{ post.get_field('products_link').url }}" class="text-20-bold text-dark-10 decoration-none" {{post.get_field('products_link').target}}>{{ post.title }}</a>
+{% elseif post.get_field('products_options') == 'PDF' %}
+  <a href="{{ post.get_field('products_pdf') }}" class="text-20-bold text-dark-10 decoration-none">{{ post.title }}</a>
+{% else %}
+  <a href="{{ post.link }}" class="text-20-bold text-dark-10 decoration-none">{{ post.title }}</a>
+{% endif %}

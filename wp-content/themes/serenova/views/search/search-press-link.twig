@@ -1,0 +1,7 @@
+{% if post.get_field('press_add_link_or_pdf') == 'Special Link' %}
+<a href="{{ post.get_field('press_link').url }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium" {{post.get_field('press_link').target}}>{{ post.get_field('press_link').text }}</a>
+{% elseif post.get_field('press_add_link_or_pdf') == 'PDF' %}
+<a href="{{ post.get_field('press_pdf') }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Download PDF</a>
+{% else %}
+<a href="{{ post.link }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Read More</a>
+{% endif %}

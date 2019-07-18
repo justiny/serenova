@@ -1,0 +1,21 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+<section class="es-search fill-white xs-pb-80">
+  {% include 'categories/partials/category-title.twig' %}
+  {% include 'components/resources-tabs.twig' %}
+    <section class="fill-white">
+      <div class="es-grid">
+          <div class="es-row">
+            {# {% if term_page == 'Industry Reports' %}
+              {% include 'categories/partials/resource-industry.twig' %}
+            {% elseif term_page == 'Data Sheets' %}
+              {% include 'categories/partials/resource-data-sheets.twig' %}
+            {% else %} #}
+              {% include 'categories/partials/resource-all.twig' %}
+            {# {% endif %} #}
+          </div>
+          {% include 'partials/listing-pagination.twig' %}
+      </div>
+    </section>
+</section>
+{% endblock %}

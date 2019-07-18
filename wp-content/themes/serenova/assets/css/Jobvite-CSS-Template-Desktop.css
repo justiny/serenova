@@ -1,0 +1,96 @@
+
+body {
+	font-family: proxima-nova,sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #21282e;
+	font-size: 1rem;
+}
+
+a {
+	color: #11C9F4;
+}
+a:hover {
+	opacity: .7;
+}
+a:visited {
+	color:#42505B;
+}
+/* ===== SITE LAYOUT =================== */
+
+
+
+	.jv-page-container 	{ }
+	.jv-page 			{ }
+	.jv-page-content 	{ }
+	.jv-page-header 	{ }
+	.jv-page-body 		{ }
+	.jv-wrapper 		{ }
+	.jv-footer 			{ }
+
+
+
+/* ===== JOB LISTINGS PAGE  =================== */
+
+	.jv-page-error 		{ }
+	.jv-page-body h2 	{
+		font-size: 1.75rem;
+	}
+
+
+	h3.h2 {
+		font-size: 1.5rem;
+	}
+	.jv-job-list  		{
+	color:#42505B;}
+	.jv-job-list th  	{ }
+	.jv-job-list td  	{ }
+	.jv-job-list .jv-job-list-name  		{ }
+	.jv-job-list .jv-job-list-location  	{ }
+
+
+
+
+
+
+/* ========== JOB DETAILS PAGE =============== */
+
+	h2.jv-header 	{
+	font-size: 1.75rem;
+}
+
+	.jv-job-detail-meta,
+	.jv-apply-meta    		{}
+
+
+		.jv-button {
+			margin-left: 5px;
+			color: #21282E;
+		}
+		.jv-button-primary {
+			background-color: #11C9F4;
+			color: #fff;
+			border-color: transparent;
+		}
+
+	.jv-current-openings 	{ }
+	.jv-share-widget 		{ }
+
+	.jv-job-detail-bottom-actions,
+	.jv-apply-form-actions 	{ }
+
+
+
+
+
+
+/* ========== APPLY PAGE ====================== */
+
+	.jv-form 				{}
+	.jv-apply-form 			{}
+	.jv-search-form 		{}
+
+	.jv-apply-step 			{}
+	.jv-apply-section 		{}
+	.jv-step-header 		{} 		/* Section Title */
+	.jv-required-label 		{}

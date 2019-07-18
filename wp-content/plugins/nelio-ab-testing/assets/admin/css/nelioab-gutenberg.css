@@ -1,0 +1,6 @@
+button[class*="editor-post-publish"],
+.button-link-delete,
+.editor-post-permalink,
+.edit-post-post-status {
+	display: none !important;
+}

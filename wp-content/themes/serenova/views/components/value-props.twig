@@ -1,0 +1,80 @@
+{% set padding = "xs-pl-0 xs-pr-15 sm-pl-15 sm-pr-60 relative z2" %}
+
+{% if item.add_custom_styles == 1 %}
+<style>
+  .es-value-props {
+    padding-top: {{ item.vp_pt }}px;
+    padding-bottom: {{ item.vp_pb }}px;
+    margin-top: {{ item.vp_mt }}px;
+    margin-bottom: {{ item.vp_mb }}px;
+  }
+</style>
+{% endif %}
+
+<section class="es-value-props xs-pb-20 xs-pt-20 sm-pb-60 sm-pt-60 fill-white">
+  <div class="es-grid">
+    <div class="es-row">
+    {% if item.vp_title is not empty or item.vp_text is not empty %}
+      <div class="es-value-props-title es-col-xs-6 es-col-md-4 es-offset-md-1 text-center-left xs-mb-20 sm-mb-40 md-mb-80">
+      {% if item.vp_title is not empty %}
+        <h2 class="title-1 text-dark-10 xs-mb-20">{{ item.vp_title }}</h2>
+      {% endif %}
+      {% if item.vp_body is not empty %}
+        <div class="value-props-body text-20 text-dark-30">{{ item.vp_body }}</div>
+      {% endif %}
+      </div>
+    {% endif %}
+    {% if item.vp_props is not empty %}
+      {% for prop in item.vp_props %}
+        {# count items in loop #}
+        {% set col_count = "" %}
+        {% set prop_icon = TimberImage(prop.vp_icon).src %}
+        {% if loop.index0 == 0 or loop.index0 == 4 or loop.index0 == 8 or loop.index0 == 12 or loop.index0 == 16 %}
+          {% set col_count = 'es-value-props-prop-inner-first' %}
+        {% elseif loop.index0 == 1 or loop.index0 == 5 or loop.index0 == 9 or loop.index0 == 13 or loop.index0 == 17 %}
+          {% set col_count = 'es-value-props-prop-inner-second' %}
+        {% elseif loop.index0 == 2 or loop.index0 == 6 or loop.index0 == 10 or loop.index0 == 14 or loop.index0 == 18 %}
+          {% if item.show_three_vp == '1' %}
+            {% set col_count = 'es-value-props-prop-inner-fourth' %}
+
+          {% else %}
+            {% set col_count = 'es-value-props-prop-inner-third' %}
+          {% endif %}
+
+        {% elseif loop.index0 == 3 or loop.index0 == 7 or loop.index0 == 11 or loop.index0 == 15 or loop.index0 == 19 %}
+          {% set col_count = 'es-value-props-prop-inner-fourth' %}
+        {% endif %}
+
+        {% if item.show_three_vp == '1'  %}
+          {% set vp_number = 'es-col-sm-2' %}
+          {% set vp_number_class = 'es-value-props-prop-inner-small' %}
+          {% set vp_number_padding = 'md-pr-20' %}
+        {% else %}
+          {% set vp_number = 'es-col-sm-3' %}
+            {% set vp_number_class = 'es-value-props-prop-inner' %}
+            {% set vp_number_padding = 'md-pr-50' %}
+        {% endif %}
+
+        <div class="es-value-props-prop es-col-xs-6 {{ vp_number }} xs-mb-30 sm-mb-40">
+          <div class="{{ vp_number_class }} {{ col_count }} flex xs-wrap sm-no-wrap">
+            {% if prop_icon is not empty %}
+            <div class="img-wrap xs-mb-20 sm-mb-0 flex md-justify-center sm-align-flex-start">
+              <img src="{{ TimberImage(prop.vp_icon).src }}" alt="{{ TimberImage(prop.vp_icon).alt }}">
+            </div>
+            {% endif %}
+            <div class="es-value-props-prop-content xs-pr-15 sm-pl-15 {{ (prop_icon != '' ? 'sm-ml-20' : '-content-full') }} sm-pr-20 {{vp_number_padding}}">
+              <h2 class="text-20-bold text-dark-10 xs-mb-15">{{ prop.vp_item_title }}</h2>
+              <div class="text-16 text-dark-30">{{ prop.vp_item_text }}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+    {% if item.vp_button is not empty %}
+      <div class="flex justify-center es-col-xs-6">
+        <a href="{{ item.vp_button.url }}" class="button button-blue button-medium button-shadow caps" {{ item.vp_button.target}}>{{ item.vp_button.text }}</a>
+      </div>
+    {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+{# Figuring out card width on sm screens and up #}
+{% set col_class = "" %}
+
+{% if item.cards_per_row == 2 %}
+  {% set col_class = 'es-col-xs-6 es-col-sm-3' %}
+{% else %}
+  {% set col_class = 'es-col-xs-6 es-col-sm-2' %}
+{% endif %}
+
+<section class="card-callout xs-pb-0 xs-pt-20 sm-pb-0 sm-pt-40">
+  <div class="es-grid">
+    <div class="es-row">
+
+      {% for card in item.card_callout_items %}
+
+        <div class="card-callout{% if loop.index0 is odd %}-bottom{% else %}-top{% endif %} {{col_class}} xs-mb-20 sm-mb-40 {% if loop.index0 is odd %}-bottom{% endif %}">
+
+          <a href="{{ card.card_callout_title.url }}" {{ card.card_callout_title.target }} class="flex decoration-none card-callout-wrapper">
+
+            <div class="card-callout{% if loop.index0 is odd %}-bottom{% else %}-top{% endif %}{% if loop.index0 is odd %}-odd{% else %}-even{% endif %} flex xs-flex-column md-flex-row fill-white xs-pt-40 xs-pb-40 xs-pl-15 xs-pr-15 md-pr-40 md-pl-30 md-pt-45">
+
+              {% if item.cards_per_row == 2 and card.card_callout_icon is not empty %}
+               <img class="xs-mb-10 md-mb-0 md-mr-40" src="{{ TimberImage(card.card_callout_icon).src }}"
+                alt="{{ TimberImage(card.card_callout_icon).alt }}">
+              {% endif %}
+
+              <div class="card-callout-content">
+                {% if card.card_callout_title is not empty %}
+                <h3 class="xs-mb-20 text-20-bold text-dark-10 decoration-none">{{ card.card_callout_title.text }}</h3>
+                {% endif %}
+
+                {% if card.card_callout_text is not empty %}
+                <p class="text-16 text-dark-30">{{ card.card_callout_text }}</p>
+                {% endif %}
+              </div>
+
+            </div>
+          </a>
+        </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

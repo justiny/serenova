@@ -1,0 +1,102 @@
+{
+    "key": "group_5bc8d4937ea47",
+    "title": "Resources",
+    "fields": [
+        {
+            "key": "field_5bd8cb6a9c5ee",
+            "label": "Add Link or PDF",
+            "name": "add_link_or_pdf",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Link": "Link",
+                "PDF": "PDF"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5bc8d52cb7de9",
+            "label": "Link",
+            "name": "resources_link",
+            "type": "smart_button",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bd8cb6a9c5ee",
+                        "operator": "==",
+                        "value": "Link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "attachment",
+                "page",
+                "post"
+            ]
+        },
+        {
+            "key": "field_5bd8cb789c5ef",
+            "label": "PDF",
+            "name": "resources_pdf",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bd8cb6a9c5ee",
+                        "operator": "==",
+                        "value": "PDF"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1540934768
+}

@@ -1,0 +1,147 @@
+
+	body {
+		font-family: proxima-nova,sans-serif;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #21282e;
+		font-size: 1rem;
+	}
+
+	a {
+		color: #11C9F4;
+	}
+	a:hover {
+		opacity: .7;
+	}
+	a:visited {
+		color:#42505B;
+	}
+
+/* ===== SITE LAYOUT =================== */
+
+
+	.jv-page-container 	{}
+	.jv-page 			{}
+	.jv-page-content 	{}
+
+	.jv-page-header 	{
+		background-color: #42505B;
+	}
+	.jv-logo a {
+		color: #fff;
+	}
+	.jv-logo:after {
+		background: transparent;
+	}
+	.jv-tabs {	}
+	.jv-tab {
+		background-color: #11C9F4;
+		color:#fff;
+	}
+	.jv-tab:visited {
+		color: #fff;
+	}
+	.jv-tab-active:before {
+		border-top: 10px solid #11C9F4;
+	}
+	.jv-nav {
+		background-color: #21282E;
+	}
+	.jv-nav-open-link {
+		color: #fff;
+	}
+	.jv-page-body 		{}
+	.jv-wrapper 		{}
+	.jv-footer 			{}
+
+
+
+
+
+/* ===== JOB LISTINGS PAGE  =================== */
+
+	.jv-job-list-pane 		{}
+	.jv-job-categories 		{}
+	.jv-job-category-link 	{}
+	.jv-job-category-label 	{
+		color:#11C9F4;
+	}
+	.jv-job-category-meta 	{}
+	.jv-list-icon {
+		color:#11C9F4;
+	}
+
+	.jv-job-list 			{}
+	.jv-job-list-inner {
+		background-color: #11C9F4;
+	}
+	.jv-job-list-inner .jv-list-icon {
+		color: #fff;
+	}
+	.jv-job-item 			{
+		color: #fff;
+	}
+	.jv-list-link 			{
+		color: #fff;
+	}
+	.jv-list-link:visited {
+		color: #fff;
+	}
+	.jv-list-label {
+		color:#fff;
+	}
+	.jv-meta 				{}
+
+	.jv-about-pane {
+		padding-top: 20px;
+		padding-bottom: 20px;
+}
+
+
+/* ========== JOB DETAILS PAGE =============== */
+
+	h2.jv-header 					{}
+	.jv-job-detail-location			{}
+
+	.jv-job-detail-top-actions 		{}
+	.jv-job-detail-description 		{}
+	.jv-job-detail-bottom-actions 	{}
+
+
+	.jv-button 				{
+		margin-left: 5px;
+	}
+	.jv-button-primary 		{
+		background-color: #11C9F4;
+		border-color: transparent;
+		color:#fff;
+	}
+	.jv-button-primary:hover 		{
+		opacity: .7;
+	}
+
+	.jv-current-openings 	{}
+	.jv-share-widget 		{}
+
+
+
+
+
+/* ========== APPLY PAGE ====================== */
+
+	.jv-sub-header 			{}
+	.jv-apply-meta 			{}
+	.jv-form 				{}
+	.jv-apply-form 			{}
+
+	.jv-apply-section 		{}
+	.jv-step-header 		{} 		/* Section Title */
+	.jv-form-field 			{}
+	.jv-form-field-control 		{}
+	.jv-form-field-control input {}
+	.jv-select-group 	 		{}
+	.jv-select-group label 		{}
+	.jv-select-group select 	{}
+
+	.jv-apply-form-actions 	{}
+	.note 					{}

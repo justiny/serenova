@@ -1,0 +1,7 @@
+{% if options.announcement_bar.text %}
+<div class="es-announcement">
+  <a href="{{ options.announcement_bar.url }}" class="xs-pl-20 xs-pr-20 xs-pb-10 xs-pt-10 flex justify-center align-center decoration-none fill-blue-dark" {{ options.announcement_bar.target }}>
+    <h2 class="text-15-bold caps text-white">{{ options.announcement_bar.text }}</h2>
+  </a>
+</div>
+{% endif %}

@@ -1,0 +1,34 @@
+{% macro link(item) -%}
+  <a href="{{ item.get_link }}" class="text-black decoration-none text-18">
+    {{ item.title }}
+  </a>
+{%- endmacro %}
+
+{% macro item(item, loop) -%}
+  {% import _self as nav %}
+
+  <li class="nav-main-item xs-mr-10 level-{{ item.level }} {# {{ item.classes|join(' ')}} #} {{ item.get_children ? 'has-children' }} {{ item.current ? 'is-active' }} id-{{ loop.index0 }}">
+    {% if item.get_children %}
+      {{ nav.link(item) }}
+
+      <ul class="dropdown-menu ddm-level-{{ item.level }}">
+        {% for child in item.get_children %}
+          {{ nav.item(child, loop) }}
+        {% endfor %}
+      </ul>
+
+    {% else %}
+      {{ nav.link(item) }}
+    {% endif %}
+  </li>
+{%- endmacro %}
+
+{% macro menu(menu) -%}
+  {% import _self as nav %}
+
+  <ul class="justify-space-between list-unstyled list-flex es-hidden-xs es-show-md-flex">
+    {% for items in menu %}
+      {{ nav.item(items, loop) }}
+    {% endfor %}
+  </ul>
+{%- endmacro %}

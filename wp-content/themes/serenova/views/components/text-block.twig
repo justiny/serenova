@@ -1,0 +1,21 @@
+<section class="es-centered-text xs-pb-20 xs-pt-20 sm-pb-60 sm-pt-60 {{ (item.text_block_background_white ? 'fill-white' : '') }}">
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="es-col-xs-6 es-col-sm-4 {{ (item.text_block_centered ? 'es-offset-sm-1' : '') }}">
+        {% if item.text_block_title is not empty %}
+          <h2 class="title-1 text-dark-10 xs-mb-20">
+            {{ item.text_block_title }}
+          </h2>
+        {% endif %}
+        {% if item.text_block_text is not empty %}
+          <div class="text-20 text-dark-30">
+            {{ item.text_block_text }}
+          </div>
+        {% endif %}
+        {% if item.text_block_button is not empty %}
+          <a href="{{ item.text_block_button.url }}" class="button button-blue button-large caps xs-mt-20 sm-mt-40" {{ item.text_block_button.target}}>{{ item.text_block_button.text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

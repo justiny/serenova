@@ -1,0 +1,46 @@
+<section class="es-image-spread xs-pb-20 xs-pt-20 sm-pt-80 sm-pb-80" id="{{ item.video_id }}">
+  <div class="fill-white xs-pt-40 xs-pb-40">
+    <div class="es-grid">
+      <div class="es-row">
+        <div class="es-col-xs-6 es-col-sm-3 xs-pt-20 sm-pt-60 xs-pb-20 sm-pb-60">
+          <div class="es-image-spread-content{{ (item.image_spread_position == 'Right' ? ' -is-right' : '') }}">
+            {% if item.image_spread_title is not empty %}
+            <h2 class="title-1 text-dark-10 title-cap xs-mb-20">{{ item.image_spread_title }}</h2>
+            {% endif %}
+            <div class="text-20 text-dark-30 xs-pr-40">{{ item.image_spread_text }}</div>
+            {% if item.image_spread_button.text is not empty or item.image_spread_link.text is not empty %}
+            <div class="flex flex-wrap align-center xs-flex-column sm-flex-row xs-mt-40">
+              {% if item.image_spread_button.text is not empty %}
+                <a href="{{ item.image_spread_button.url }}" class="button button-blue button-medium button-shadow xs-mb-20 sm-mb-0 xs-mr-0 sm-mr-40" {{ item.image_spread_button.target }}>{{ item.image_spread_button.text }}</a>
+              {% endif %}
+              {% if item.image_spread_link.text is not empty %}
+                <a href="{{ item.image_spread_link.url }}" class="text-15-medium caps link-blue link-arrow-blue decoration-none" {{ item.image_spread_link.target }}>{{ item.image_spread_link.text }}</a>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <script>
+        {# document.getElementsByClassName("plyr__volume").removeAttribute("hidden"); #}
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.3.23/plyr.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.3.23/plyr.polyfilled.min.js"></script>
+        <div class="es-image-spread-image es-col-xs-6 es-col-sm-3 relative {{ (item.image_spread_position == 'Right' ? ' -is-right' : '') }}">
+            <div class="xs-pt-60">
+              <div class="plyr-bg"></div>
+              {% if item.video_type == "vimeo" or item.video_type == "youtube" %}
+              <a class="video-callout-item-video venobox" data-autoplay="true" data-vbtype="video" href="http://youtu.be/{{ item.video_url }}">
+              {% elseif item.video_type == "local" %}
+              <a class="video-callout-item-video venobox" data-autoplay="true" data-vbtype="iframe" href="{{ item.video_local_mp4 }}">
+              {% endif %}
+                <div class="video-wrap relative">
+                  <img src="{{ TimberImage(item.video_poster).src }}" alt="" class="es-image-spread-image-video-img">
+                  <img src="{{ theme.link }}/assets/images/serenova-play@2x.png" class="video-play">
+                </div>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

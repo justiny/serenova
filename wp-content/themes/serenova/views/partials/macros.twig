@@ -1,0 +1,22 @@
+{% macro post_meta( post ) %}
+<div class="categories-tags">
+  {% if post.terms('category') %}
+  <span class="cat-links">
+    Posted in 
+    {% for term in post.terms('category') %}
+      <a href="{{ term.link }}" title="View all posts in {{ term.name }}" rel="category tag">{{ term.name }}</a>{% if loop.last == false %},{% endif %}     
+    {% endfor %}
+  </span>
+  {% endif %}
+  
+  {% if post.terms('tags') %}
+  <span class="tags-links">
+    Tagged  
+    {% for term in post.terms('tags') %}
+      <a href="{{ term.link }}" title="View all posts tagged {{ term.name }}" rel="category tag">{{ term.name }}</a>{% if loop.last == false %},{% endif %}     
+    {% endfor %}
+  </span>
+  {% endif %}
+</div>
+{% endmacro %}
+

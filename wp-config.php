@@ -41,7 +41,7 @@ else:
     define('DB_CHARSET', 'utf8');
 
     /** The Database Collate type. Don't change this if in doubt. */
-    define('DB_COLLATE', '');
+    define('DB_COLLATE', 'utf8_unicode_ci');
 
     /**#@+
      * Authentication Unique Keys and Salts.
@@ -100,8 +100,8 @@ else:
     define('DB_USER',          'database_username');
     define('DB_PASSWORD',      'database_password');
     define('DB_HOST',          'database_host');
-    define('DB_CHARSET',       'utf8');
-    define('DB_COLLATE',       '');
+    define('DB_CHARSET', 'utf8');
+    define('DB_COLLATE', 'utf8_unicode_ci');
     define('AUTH_KEY',         'put your unique phrase here');
     define('SECURE_AUTH_KEY',  'put your unique phrase here');
     define('LOGGED_IN_KEY',    'put your unique phrase here');
@@ -146,6 +146,9 @@ define('WPLANG', '');
 if ( ! defined( 'WP_DEBUG' ) ) {
     define('WP_DEBUG', false);
 }
+
+define('WP_CACHE', true);
+define('DISALLOW_FILE_EDIT', false);
 
 /* That's all, stop editing! Happy Pressing. */
 

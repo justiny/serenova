@@ -1,0 +1,163 @@
+<style>
+div.bg-grayscale-light-med-light {display:none!important;}
+div.container.por, div.container.full {padding-top:0;}
+div.no-valprop-teaser {display:none;}
+.field-name-field-textarea ul li:before, .field-name-field-textarea2 ul li:before {display:none;}
+.bg-white { background: #f2f2f2!important; }
+.ui-widget-content {border:none!important;}
+.intro {padding: 10px 0 15px 8px!important; }
+.span12 {width:980px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/roicalc/_js/master.js"></script>
+<script src="/roicalc/_js/highcharts.js"></script>
+<link href="/roicalc/_css/master.css" media="screen" rel="stylesheet" type="text/css" />
+<div class="container full">
+	<div id="tabs">
+		<div class="por">
+			<ul>
+				<li><a href="#tabs-1" class="blue-dot"></a><span>Agent Productivity</span></li>
+				<li><a href="#tabs-2" class="yellow-dot"></a><span>Agent Attrition</span></li>
+				<li><a href="#tabs-3" class="green-dot"></a><span>Customer Lifetime Value</span></li>
+				<li class="annual">
+					<a href="#tabs-4" class="orange-dot"></a><span>Annual Savings</span>
+					<div id="total-savings"></div>
+					<button id="see-now" class="button-style blue-small" onclick="jumpToTab(3);">See it Now</button>
+				</li>
+			</ul>
+			<hr class="timeline">
+		</div>
+		<div id="tabs-1" class="data-input">
+			<h3>For Agent Productivity Improvement</h3>
+			<p>Fill in a number for each agent interaction field.</p>
+			<div>
+				<table class="border-blue">
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/phone.png" alt=""></td>
+						<td class="label">What is the total number of <strong>Voice Calls</strong> per month?</td>
+						<td class="input"><input class="roi-input" type="text" name="ap_voice"></td>
+					</tr>
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/chat.png" alt=""></td>
+						<td class="label">What is the total number of <strong>Chat Sessions</strong> per month?</td>
+						<td class="input"><input class="roi-input" type="text" name="ap_chat"></td>
+					</tr>
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/email.png" alt=""></td>
+						<td class="label">What is the total number of <strong>Emails</strong> per month?</td>
+						<td class="input"><input class="roi-input" type="text" name="ap_email"></td>
+					</tr>
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/social.png" alt=""></td>
+						<td class="label">What is the total number of <strong>Social Media</strong> per month?</td>
+						<td class="input"><input class="roi-input" type="text" name="ap_social"></td>
+					</tr>
+				</table>
+			</div>
+			<button class="button-style blue-nav" onclick="jumpToTab(1);">NEXT</button>
+			<div class="footnote">
+				<p>*If you don't currently handle some of the intereactions above, just leave that input field empty.<br>However, at least one interaction input is required.</p>
+			</div>
+		</div>
+		<div id="tabs-2" class="data-input">
+			<h3>For Agent Attrition Improvement</h3>
+			<p>Fill in the total number of agents and your current attrition rate to calculate your cost savings.</p>
+			<div>
+				<table class="border-yellow">
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/agents.png" alt=""></td>
+						<td class="label">What is the total number of <strong>Agents</strong>?</td>
+						<td class="input"><input class="roi-input" type="text" name="aa_agents"></td>
+					</tr>
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/agents-out.png" alt=""></td>
+						<td class="label">What is the current <strong>Agent attrition rate</strong>? (%)</td>
+						<td class="input"><input class="roi-input" type="text" name="aa_rate" value="50"></td>
+					</tr>
+				</table>
+			</div>
+			<button class="button-style blue-nav" onclick="jumpToTab(2);">NEXT</button>
+
+		</div>
+		<div id="tabs-3" class="data-input">
+			<h3>For Customer Life Time Value Improvement</h3>
+			<p>Fill in the total number of customers and their annual value to calculate your cost savings.</p>
+			<div>
+				<table class="border-green">
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/people.png" alt=""></td>
+						<td class="label">What is the total number of <strong>Customers</strong>?</td>
+						<td class="input"><input class="roi-input" type="text" name="cl_customers"></td>
+					</tr>
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/chart.png" alt=""></td>
+						<td class="label">What is the current annual <strong>Customer Value</strong>? ($)</td>
+						<td class="input"><input class="roi-input" type="text" name="cl_value" value="250"></td>
+					</tr>
+				</table>
+			</div>
+			<button class="button-style blue-nav" onclick="jumpToTab(3);">NEXT</button>
+
+		</div>
+		<div id="tabs-4" class="cf">
+			<div class="data-input">
+				<h3>Serenova Contact Center Annual Savings</h3>
+				<p>Drag the sliding bars to estimate your contact center improvement with Serenova.</p>
+				<p class="table-title">Estimated Agent Productivity Benefits</p>
+				<table class="border-blue">
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/clock.png" alt=""></td>
+						<td class="label">Serenova Estimated Reduction in <strong>Agent Handle Time</strong> (seconds)</td>
+						<td class="slider">
+							<div id="slide-handle" class="roi-slider" name="sl_aht" handle-value="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/person.png" alt=""></td>
+						<td class="label">Serenova Estimated Improvement in <strong>First Contact Resolution</strong></td>
+						<td class="slider">
+							<div id="slide-contact" class="roi-slider" name="sl_fcr" handle-value="2"></div>
+						</td>
+					</tr>
+					<tr class="savings">
+						<td colspan=3>SAVINGS: <span class="ap-save"></span></td>
+					</tr>
+				</table>
+				<p class="table-title">Estimated Agent Attrition Benefits</p>
+				<table class="border-yellow">
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/agents-out.png" alt=""></td>
+						<td class="label">Serenova Estimated <strong>Agent Attrition Improvement</strong></td>
+						<td class="slider">
+							<div id="slide-attrition" class="roi-slider" name="sl_aai" handle-value="3"></div>
+						</td>
+					</tr>
+					<tr class="savings">
+						<td colspan=3>SAVINGS: <span class="aa-save"></span></td>
+					</tr>
+				</table>
+				<p class="table-title">Estimated Customer Lifetime Value Benefits</p>
+				<table class="border-green">
+					<tr>
+						<td class="icon"><img src="/roicalc/_media/people.png" alt=""></td>
+						<td class="label">Serenova Anticipated Improvement in <strong>Customer Lifetime Value<sup>*</sup></strong></td>
+						<td class="slider">
+							<div id="slide-customer" class="roi-slider" name="sl_clv" handle-value="4"></div>
+						</td>
+					</tr>
+					<tr class="savings">
+						<td colspan=3>SAVINGS: <span class="cl-save"></span></td>
+					</tr>
+				</table>
+				<div class="footnote">
+					<p>*Based on improving customer churn rate and increased revenue</p>
+				</div>
+
+			</div>
+			<div class="summary">
+				<div id="summary-chart"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<br />

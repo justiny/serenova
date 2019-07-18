@@ -1,0 +1,41 @@
+{# Related Posts for Category Term #}
+<section class="featured-cards xs-pt-20 sm-pt-60 sm-pb-20">
+<hr class="xs-mb-60">
+<div class="es-row">
+  {% if product is not empty %}
+  <h2 class="es-col-xs-6 xs-mb-40 title-1 text-center-left text-dark-10">Related Product Updates</h2>
+  {% endif %}
+  {% for item in product %}
+      <div class="es-col-xs-6 es-col-sm-2 xs-mb-20 sm-mb-40">
+        {% if item.get_field('products_options') == 'Link' %}
+          <a href="{{ item.get_field('products_link').url }}" class="featured-cards-item decoration-none" {{item.get_field('products_link').target}}>
+        {% elseif item.get_field('products_options') == 'PDF' %}
+          <a href="{{ item.get_field('products_pdf') }}" class="featured-cards-item decoration-none">
+        {% else %}
+          <a href="{{ item.link }}" class="featured-cards-item decoration-none">
+        {% endif %}
+
+        <div class="featured-cards-item-inner fill-white">
+          {% if TimberImage(item.thumbnail).src %}
+              <div class="featured-cards-item-inner-image" style="background-image: url({{ TimberImage(item.thumbnail).src }})"></div>
+            {% else %}
+                <div class="featured-cards-item-inner-image" style="background-image: url({{theme.link}}/assets/images/related-placeholder.jpg)"></div>
+            {% endif %}
+            <div class="xs-pt-25 xs-pb-25 xs-pr-15 sm-pr-30 xs-pl-15 sm-pl-30">
+            <h3 class="text-20-bold text-blue-dark text-dark-10 decoration-none xs-mb-20">{{ item.title }}</h3>
+
+            {% if item.get_field('products_options') == 'Link' %}
+            <span class="link-blue link-arrow-blue link-arrow-blue-no-animate text-blue decoration-none caps text-15-medium">{{item.get_field('products_link').text}}</span>
+            {% elseif item.get_field('products_options') == 'PDF' %}
+            <span class="link-blue link-arrow-blue link-arrow-blue-no-animate text-blue decoration-none caps text-15-medium">Download PDF</span>
+            {% else %}
+            <span class="link-blue link-arrow-blue link-arrow-blue-no-animate text-blue decoration-none caps text-15-medium">Read More</span>
+            {% endif %}
+
+          </div>
+        </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="xs-pt-20 xs-pb-0 sm-pt-60 sm-pb-0">
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="es-col-xs-6 es-col-md-4 es-offset-md-1 es-col-md-3">
+        {% if item. roi_calculator_title %}
+          <h2 class="title-1 xs-mb-20 text-dark-10">{{ item. roi_calculator_title }}</h2>
+        {% endif %}
+        {% if item. roi_calculator_copy %}
+          <div class="text-20 text-dark-30 xs-mb-20">{{ item. roi_calculator_copy }}</div>
+        {% endif %}
+        {% if item.roi_calculator_cta_button is not empty %}
+          <a href="{{ item.roi_calculator_cta_button.url }}" class="button button-blue button-medium xs-mr-0 sm-mr-40 caps" {{ item.roi_calculator_cta_button.target}}>{{ item.roi_calculator_cta_button.text }}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="es-row">
+      <div class=" es-col-xs-6 sm-mb-60 xs-mb-20 xs-mt-20">
+        <div class="es-roi-calculator">
+          {% include 'partials/roi-calculator.twig' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

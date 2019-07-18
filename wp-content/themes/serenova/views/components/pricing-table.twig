@@ -1,0 +1,15 @@
+<section class="es-pricing xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60">
+  <div class="es-grid">
+    <div class="es-row">
+    {% if item.pricing_title is not empty %}
+      <h2 class="es-col-xs-6 title-1 text-center-left text-dark-10 xs-mb-30">{{ item.pricing_title}}</h2>
+    {% endif %}
+      <div id="app">
+        <app></app>
+      </div>
+    {% if item.pricing_text_bottom is not empty %}
+        <div class="es-col-xs-6 es-col-sm-4 es-offset-sm-1 text-16 text-dark-30 xs-mt-30 sm-mt-50">{{ item.pricing_text_bottom }}</div>
+    {% endif %}
+    </div>
+  </div>
+</section>

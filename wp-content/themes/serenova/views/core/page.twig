@@ -1,0 +1,62 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+  {% for item in post.get_field('es_layout') %}
+    {% if item.acf_fc_layout == 'simple_header' %}
+      {% include 'components/simple-header.twig' %}
+    {% elseif item.acf_fc_layout == 'ui_header' %}
+      {% include 'components/ui-header.twig' %}
+    {% elseif item.acf_fc_layout == 'testimonial' %}
+      {% include 'components/testimonial.twig' %}
+    {% elseif item.acf_fc_layout == 'image_header' %}
+      {% include 'components/image-header.twig' %}
+    {% elseif item.acf_fc_layout == 'card_cta' %}
+      {% include 'components/card-cta.twig' %}
+    {% elseif item.acf_fc_layout == 'featured_cards' %}
+      {% include 'components/featured-cards.twig' %}
+    {% elseif item.acf_fc_layout == 'locations' %}
+      {% include 'components/locations.twig' %}
+    {% elseif item.acf_fc_layout == 'logo_blocks' %}
+      {% include 'components/logo-blocks.twig' %}
+    {% elseif item.acf_fc_layout == 'button_cta' %}
+      {% include 'components/button-cta.twig' %}
+    {% elseif item.acf_fc_layout == 'related_posts' %}
+      {% include 'components/related-posts.twig' %}
+    {% elseif item.acf_fc_layout == 'card_callout' %}
+      {% include 'components/card-callout.twig' %}
+    {% elseif item.acf_fc_layout == 'ui_spread' %}
+      {% include 'components/ui-spread.twig' %}
+    {% elseif item.acf_fc_layout == 'text_block' %}
+      {% include 'components/text-block.twig' %}
+    {% elseif item.acf_fc_layout == 'value_props' %}
+      {% include 'components/value-props.twig' %}
+    {% elseif item.acf_fc_layout == 'image_spread' %}
+      {% include 'components/image-spread.twig' %}
+    {% elseif item.acf_fc_layout == 'video_spread' %}
+      {% include 'components/video-spread.twig' %}
+    {% elseif item.acf_fc_layout == 'image_cta' %}
+      {% include 'components/image-cta.twig' %}
+    {% elseif item.acf_fc_layout == 'stats_block' %}
+      {% include 'components/stats-block.twig' %}
+      {% elseif item.acf_fc_layout == 'table' %}
+      {% include 'components/table.twig' %}
+    {% elseif item.acf_fc_layout == 'bio_repeater' %}
+      {% include 'components/bio-repeater.twig' %}
+    {% elseif item.acf_fc_layout == 'plain_rich_text' %}
+      {% include 'components/plain-rich-text.twig' %}
+    {% elseif item.acf_fc_layout == 'video' %}
+      {% include 'components/video.twig' %}
+    {% elseif item.acf_fc_layout == 'image' %}
+      {% include 'components/image.twig' %}
+    {% elseif item.acf_fc_layout == 'column_text' %}
+      {% include 'components/column-text.twig' %}
+    {% elseif item.acf_fc_layout == 'product_header' %}
+      {% include 'components/product-header.twig' %}
+    {% elseif item.acf_fc_layout == 'pricing_table' %}
+      {% include 'components/pricing-table.twig' %}
+    {% elseif item.acf_fc_layout == 'form_embed' %}
+      {% include 'components/form-embed.twig' %}
+    {% elseif item.acf_fc_layout == 'roi_calculator' %}
+      {% include 'components/roi-calculator.twig' %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}

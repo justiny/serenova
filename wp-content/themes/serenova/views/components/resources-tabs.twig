@@ -1,0 +1,14 @@
+<section class="es-resources-tabs xs-pb-20 sm-pb-60">
+  <div class="es-grid">
+    <div class="es-row">
+      <ul class="es-col-xs-6 list-unstyled flex flex-wrap">
+        <li class="xs-pr-5 xs-pl-0 xs-pt-10 xs-pb-10 sm-pr-10 sm-pl-0"><a href="{{ theme.url }}/resources" class="{{cat.slug == term_page.name|lower|replace(' ', '-') ? '-active'}} text-13-medium caps decoration-none block text-white es-resources-tabs-pill fill-dark-50 xs-pt-10 xs-pb-10 xs-pl-15 xs-pr-15 sm-pt-5 sm-pb-5 sm-pl-10 sm-pr-10">All</a></li>
+        {% for cat in categories %}
+          <li class="xs-pr-5 xs-pl-5 xs-pt-10 xs-pb-10 sm-pr-10 sm-pl-10">
+            <a href="{{cat.link}}" class="{{cat.slug == term_page.name|lower|replace(' ', '-') ? '-active'}} text-13-medium caps decoration-none block text-white es-resources-tabs-pill fill-dark-50 xs-pt-10 xs-pb-10 xs-pl-15 xs-pr-15 sm-pt-5 sm-pb-5 sm-pl-10 sm-pr-10">{{cat.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

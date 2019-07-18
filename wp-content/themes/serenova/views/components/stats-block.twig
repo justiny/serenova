@@ -1,0 +1,27 @@
+<section class="es-stats-block xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60 xs-mt-20 xs-mb-20 sm-mt-60 sm-mb-60 fill-white">
+  <div class="es-grid">
+    <div class="es-row justify-center">
+      {% if item.sb_title is not empty %}
+        <h2 class="title-1 text-dark-10 title-cap es-col-xs-6 es-col-md-4 es-offset-md-1 xs-mb-60 md-mb-85">{{ item.sb_title }}</h2>
+      {% endif %}
+      {% if item.sb_stats is not empty %}
+      <div class="es-stats-block-stats es-col-xs-6 es-col-md-4 es-offset-md-1 flex flex-wrap justify-space-between">
+        <div class="es-row">
+          {% for stat in item.sb_stats %}
+            <div class="es-col-xs-3 es-col-md-2 xs-mb-35 sm-mb-70 flex justify-flex-start">
+              <div class="es-stats-block-inner flex flex-column">
+              {% if stat.sb_data %}
+                <h3 class="text-38-bold text-dark-10">{{ stat.sb_data }}</h3>
+              {% endif %}
+              {% if stat.sb_info %}
+                <p class="text-20 text-dark-30">{{ stat.sb_info }}</p>
+              {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

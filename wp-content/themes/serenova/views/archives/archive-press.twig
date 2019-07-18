@@ -1,0 +1,59 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+  <section class="es-search fill-white xs-pb-80">
+    <div class="es-search-header xs-pt-40 xs-pb-40 sm-pt-80 sm-pb-80 sm-mb-60">
+        <div class="es-grid">
+            <div class="es-row-column">
+              <h1 class="title-1 text-dark-10 xs-mb-20 es-col-xs-6 es-offset-sm-2 es-col-sm-3">{% if options.press_archive_title is not empty %}{{ options.press_archive_title }}{% else %}Press{% endif %}</h1>
+              {% if options.press_archive_text is not empty %}
+              <p class="es-col-xs-6 es-offset-sm-2 es-col-sm-3 text-20 text-dark-30">{{ options.press_archive_text }}</p>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+    {% include 'components/press-tabs.twig' %}
+    <section class="fill-white">
+      <div class="es-grid">
+          <div class="es-row">
+              {% for post in press %}
+              <div class="es-search-item es-col-xs-6 es-col-sm-2 xs-mb-40">
+                  {% if post.thumbnail %}
+                  <img src="{{ post.thumbnail.src|resize(600, 400) }}" class="xs-mb-20" />
+                  {% endif %}
+                  <h5 class="xs-mb-10 text-13-bold text-dark-50">{{ post.date }}</h5>
+                  <h3 class="xs-mb-5">
+                    {% if post.get_field('press_add_link_or_pdf') == 'Special Link' %}
+                      {% if post.get_field('press_link').url is not empty %}
+                        <a href="{{ post.get_field('press_link').url }}" class="text-20-bold text-dark-10 decoration-none" {{post.get_field('press_link').target}}>{{ post.title }}</a>
+                        {% endif %}
+                      {% elseif post.get_field('press_add_link_or_pdf') == 'PDF' %}
+                        {% if post.get_field('press_pdf') is not empty %}
+                        <a href="{{ post.get_field('press_pdf') }}" class="text-20-bold text-dark-10 decoration-none">{{ post.title }}</a>
+                        {% endif %}
+                      {% else %}
+                        <a href="{{ post.link }}" class="text-20-bold text-dark-10 decoration-none">{{ post.title }}</a>
+                    {% endif %}
+                  </h3>
+                  {% for term in post.terms('press-category') %}
+                  <a class="text-13-bold decoration-none text-dark-70" href="{{ term.link }}" title="View all posts in {{ term.name }}" rel="category tag">{{ term.name }}</a>{% if loop.last == false %},{% endif %}
+                  {% endfor %}
+                  <p class="text-16 text-dark-30 xs-mt-15 xs-mb-20">{{post.post_content|excerpt(20)}}</p>
+                  {% if post.get_field('press_add_link_or_pdf') == 'Special Link' %}
+                    {% if post.get_field('press_link').url is not empty %}
+                    <a href="{{ post.get_field('press_link').url }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium" {{post.get_field('press_link').target}}>{{ post.get_field('press_link').text }}</a>
+                    {% endif %}
+                  {% elseif post.get_field('press_add_link_or_pdf') == 'PDF' %}
+                    {% if post.get_field('press_pdf') is not empty %}
+                    <a href="{{ post.get_field('press_pdf') }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Download PDF</a>
+                    {% endif %}
+                  {% else %}
+                    <a href="{{ post.link }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Read More</a>
+                  {% endif %}
+              </div>
+              {% endfor %}
+          </div>
+          {% include 'partials/listing-pagination.twig' %}
+      </div>
+    </section>
+</section>
+{% endblock %}

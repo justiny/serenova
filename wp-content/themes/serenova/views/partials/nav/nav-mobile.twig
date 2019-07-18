@@ -1,0 +1,34 @@
+<div class="es-nav-mobile absolute">
+  <div class="es-nav-mobile-inner xs-pt-40 xs-pb-60 fill-blue-dark">
+    <ul class="es-nav-mobile-links list-unstyled">
+
+      {% for item in menu.items %}
+      <li class="{% if item.children %}has-dropdown{% endif %} flex justify-space-between flex-wrap xs-pb-20">
+        <a href="{{ item.link }}" class="text-14-medium text-white link-white decoration-none xs-pb-20 xs-pl-35">{{ item.title }}</a>
+
+        {% if item.children %}
+        <div class="es-nav-mobile-dropdown xs-pb-20 flex justify-flex-end">
+          <img class="xs-mr-35" src="{{site.theme.link}}/assets/images/white-arrow@2x.png" alt="arrow denoting dropdown menu"  tabindex="0">
+        </div>
+        {% endif %}
+
+        {% if item.children %}
+          <ul class="es-nav-mobile-sub list-unstyled xs-pt-25 xs-pr-35 xs-pl-35 xs-mt-15">
+            {% for child in item.children %}
+               <li class="xs-mb-10">
+                    <a class="text-14-medium text-white link-white decoration-none xs-pb-15" href="{{ child.link }}">{{ child.title }}</a>
+                </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+      </li>
+      {% endfor %}
+    </ul>
+    {% if options.nav_button.text is not empty %}
+      <div class="xs-pl-35 xs-pr-35">
+        <a href="{{ options.nav_button.url }}" class="button button-small button-red" {{ options.nav_button.target }}>{{ options.nav_button.text }}</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

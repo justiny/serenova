@@ -1,0 +1,7 @@
+{% if post.get_field('products_options') == 'Link' %}
+<a href="{{ post.get_field('products_link').url }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium" {{post.get_field('products_link').target}}>{{ post.get_field('products_link').text }}</a>
+{% elseif post.get_field('products_options') == 'PDF' %}
+<a href="{{ post.get_field('products_pdf') }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Download PDF</a>
+{% else %}
+<a href="{{ post.link }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Read More</a>
+{% endif %}

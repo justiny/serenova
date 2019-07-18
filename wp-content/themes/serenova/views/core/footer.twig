@@ -1,0 +1,66 @@
+<section class="xs-pt-80 xs-pb-40 fill-blue-green es-main">
+  <div class="es-footer">
+    <div class="flex flex-row flex-wrap justify-center">
+      <div class="es-footer-col xs-pl-30 xs-pr-30 xs-pb-30 xs-mb-25 md-mb-0">
+        <h3 class="xs-mb-20">
+          <a href="{{ options.f1_title.url }}" class="text-15-footer caps text-white decoration-none link-footer">{{ options.f1_title.text }}</a>
+        </h3>
+        <ul class="list-unstyled">
+          {% for item in options.f1_links %}
+          <li class="xs-mb-15"><a href="{{ item.f1_link.url }}" class="text-14-regular text-dark-80 decoration-none link-footer">{{ item.f1_link.text }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="es-footer-col xs-pl-30 xs-pr-30 xs-pb-30 xs-mb-25 md-mb-0">
+        <h3 class="xs-mb-20">
+          <a href="{{ options.f2_title.url }}" class="text-15-footer caps text-white decoration-none link-footer">{{ options.f2_title.text }}</a>
+        </h3>
+        <ul class="list-unstyled">
+          {% for item in options.f2_links %}
+          <li class="xs-mb-15"><a href="{{ item.f2_link.url }}" class="text-14-regular text-dark-80 decoration-none link-footer">{{ item.f2_link.text }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="es-footer-col xs-pl-30 xs-pr-30 xs-pb-30 xs-mb-25 md-mb-0">
+        <h3 class="xs-mb-20">
+          <a href="{{ options.f3_title.url }}" class="text-15-footer caps text-white decoration-none link-footer">{{ options.f3_title.text }}</a>
+        </h3>
+        <ul class="list-unstyled">
+          {% for item in options.f3_links %}
+          <li class="xs-mb-15"><a href="{{ item.f3_link.url }}" class="text-14-regular text-dark-80 decoration-none link-footer">{{ item.f3_link.text }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="es-footer-col xs-pl-30 xs-pr-30 xs-pb-30 xs-mb-25 md-mb-0">
+        <h3 class="xs-mb-20">
+          <a href="{{ options.f4_title.url }}" class="text-15-footer caps text-white decoration-none link-footer">{{ options.f4_title.text }}</a>
+        </h3>
+        <div class="es-footer-wrap-last">
+          <span class="text-13 text-dark-80 es-hidden-xs es-show-sm">Call Us {{options.f_phone}}</span>
+          {% set phone_url = options.f_phone|replace({' ': '', '(': '', ')': '', '-': ''}) %}
+          <a href="tel:{{phone_url}}" class="text-13 text-dark-80 decoration-none es-hidden-sm">{{options.f_phone}}</a>
+          <ul class="xs-mt-30 list-unstyled">
+            {% for item in options.f_social_links %}
+            <li class="flex flex-row align-center xs-mb-15"><img src="{{ item.f_social_icon.url }}" alt="{{item.f_social_icon.alt}}" class="xs-mr-10" style="max-width:{{ item.icon_max_width }}px"><a href="{{ item.f_social_link.url }}" class="text-13 text-dark-80 decoration-none link-footer">{{ item.f_social_link.text }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="es-footer-base xs-pl-30 xs-pr-30">
+      <hr class="es-footer-wrap-divide hr fill-dark-80 xs-mb-40">
+      <a href="{{ home.link }}"><img src="{{theme.link}}/assets/images/footer-logo@2x.png" style="max-width:127px" class="xs-mb-25" alt="Serenova Logo"></a>
+      <div class="es-footer-base-copyright">
+        <ul class="flex xs-flex-column sm-flex-row list-unstyled">
+          <li class="text-13 text-dark-70 xs-mb-20 sm-mb-30 xs-pl-0 flex-grow">&copy; {{"now"|date('Y')}} {{ site.name }}</li>
+          {% for item in options.base_links %}
+          <li class="xs-pl-0 sm-pl-30">
+            <a href="{{ item.base_link.url }}" class="text-13 text-dark-70 decoration-none link-footer">{{ item.base_link.text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{{ function('edit_post_link', '✍', '<div class="edit-link">', '</div>') }}

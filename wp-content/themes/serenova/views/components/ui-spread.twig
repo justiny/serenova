@@ -1,0 +1,83 @@
+{% set titleMargin = "" %}
+{% if item.ui_spread_block_title is not empty and item.ui_spread_ui_screen_corner_flare %}
+  {% set titleMargin = "xs-mb-20 md-mb-120" %}
+{% elseif not item.ui_spread_ui_screen_corner_flare %}
+  {% set titleMargin = "xs-mb-20" %}
+{% else %}
+  {% set titleMargin = "xs-mb-20 md-mb-95" %}
+{% endif %}
+
+<section class="xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60 z3 relative es-ui-spread {{ (item.ui_spread_background_color == 'white' ? 'fill-white component-shadow' : '') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.3.23/plyr.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.3.23/plyr.polyfilled.min.js"></script>
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="es-col-xs-6 {{ titleMargin }}">
+        <h2 class="title-4 text-dark-10 text-center-left">{{ item.ui_spread_block_title }}</h2>
+      </div>
+    </div>
+    <div class="es-row align-center">
+      <div class="es-col-xs-6 es-col-sm-3 es-ui-spread-content {{ (item.ui_spread_content_alignment == 'right') ? '-right' : '' }}">
+        {% if item.ui_spread_title is not empty %}
+          <h3 class="title-1 text-dark-10 title-cap xs-pr-0 sm-pl-15 md-pl-0 sm-pr-20">{{ item.ui_spread_title }}</h3>
+        {% endif %}
+        {% if item.ui_spread_title_image is not empty %}
+          <img class="xs-mt-20" src="{{ TimberImage(item.ui_spread_title_image).src }}" alt="{{ TimberImage(item.ui_spread_title_image).alt }}" class="es-ui-spread-title-image">
+        {% endif %}
+        {% if item.ui_spread_text is not empty %}
+          <div class="text-20 text-dark-30 xs-mt-30 xs-pr-0 sm-pl-15 md-pl-0 sm-pr-20 md-pr-100">{{ item.ui_spread_text }}</div>
+        {% endif %}
+        <div class="xs-mt-30 sm-pl-15 md-pl-0">
+        {% if item.ui_spread_button.text is not empty %}
+          <a class="button button-blue button-medium button-shadow md-mr-30" href="{{ item.ui_spread_button.url }}" {{ item.ui_spread_button.target}}>{{ item.ui_spread_button.text}}</a>
+        {% endif %}
+        {% if item.ui_spread_link.text is not empty %}
+          <a class="es-ui-spread-link link-blue link-caps decoration-none link-arrow-blue text-15-medium caps" href="{{ item.ui_spread_link.url }}" {{ item.ui_spread_link.target}}>{{ item.ui_spread_link.text}}</a>
+        {% endif %}
+        </div>
+        {% if item.ui_spread_icon_grid == 'enabled' and item.ui_spread_icon_grid_icons is not empty %}
+          <div class="es-ui-spread-icons xs-mt-30 md-mt-25">
+            <div class="flex flex-wrap">
+              {% for icon in item.ui_spread_icon_grid_icons %}
+                <div class="es-ui-spread-icon es-span-xs-6 es-span-md-3 flex flex-row align-center xs-mt-10 md-mt-35">
+                  <img src="{{ TimberImage(icon.ui_spread_icon_grid_icon).src }}" alt="{{ TimberImage(icon.ui_spread_icon_grid_icon).alt }}" class="es-ui-spread-icon-image xs-mr-20">
+                  <p class="text-20-bold text-dark-10 es-ui-spread-icon-text">{{ icon.ui_spread_icon_grid_text }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="es-col-xs-6 es-col-sm-3 es-ui-spread-image-container {{ (item.ui_spread_content_alignment == 'right') ? '-right' : '' }}">
+        <div class="es-ui-spread-ui">
+          {% if item.ui_spread_ui_screen_corner_flare and item.ui_spread_content_alignment == 'left' %}
+            <svg class="es-ui-spread-flare " width="197" height="197" xmlns="http://www.w3.org/2000/svg"><path d="M197 0v197H0C0 88.2 88.2 0 197 0" fill="#97DCF0" fill-rule="evenodd"/></svg>
+          {% endif %}
+          <div class="es-ui-spread-video-container xs-mt-40 md-mt-0 xs-mb-40 sm-mb-0">
+            <div class="es-browser-chrome">
+              <div class="es-browser-chrome-dot"></div>
+              <div class="es-browser-chrome-dot"></div>
+              <div class="es-browser-chrome-dot"></div>
+            </div>
+            {% if item.ui_spread_ui_screen_type == 'video' %}
+              <div class="es-ui-spread-video">
+                {% if item.ui_spread_ui_screen_video_type == "vimeo" or item.ui_spread_ui_screen_video_type == "youtube" %}
+                  <div class="plyr-video-embed" data-plyr-provider="{{ item.ui_spread_ui_screen_video_type }}" data-plyr-embed-id="{{ item.ui_screen_video_url }}"></div>
+                {% elseif item.ui_spread_ui_screen_video_type == "local" %}
+                  <video class="plyr-video-embed" poster="{{ TimberImage(item.ui_spread_video_poster).src }}" controls loop mute>
+                    <source src="{{ item.ui_spread_video_local_mp4 }}" type="video/mp4">
+                    {% if item.ui_spread_video_local_webm %}
+                    <source src="{{ item.ui_spread_video_local_webm }}" type="video/webm">
+                    {% endif %}
+                  </video>
+                {% endif %}
+              </div>
+            {% elseif item.ui_spread_ui_screen_type == 'image' %}
+              <img class="es-ui-spread-image" src="{{ TimberImage(item.ui_spread_ui_screen_image).src }}" alt="{{ TimberImage(item.ui_spread_ui_screen_image).alt }}" >
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

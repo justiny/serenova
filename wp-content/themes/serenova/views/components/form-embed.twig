@@ -1,0 +1,25 @@
+<section class="xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60 {{ item.form_embed_background_white ? 'fill-white' : '' }} ">
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="es-col-xs-6 es-col-md-4 es-offset-md-1">
+        <div class="es-form-embed">
+          {% if item.form_embed_title is not empty %}
+            <h2 class="title-1 text-dark-10 xs-mb-20">{{ item.form_embed_title }}</h2>
+          {% endif %}
+          {% if item.form_embed_copy is not empty %}
+            <div class="text-20 text-dark-30 xs-mb-20">{{ item.form_embed_copy }}</div>
+          {% endif %}
+          {% if item.form_embed_script is not empty and item.form_jobvite_embed == false %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.3/iframeResizer.min.js"></script>
+            <div class="es-form-embed-body">
+              {{ item.form_embed_script }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if item.form_embed_script is not empty and item.form_jobvite_embed == true %}
+    {{ item.form_embed_script }}
+  {% endif %}
+</section>

@@ -1,0 +1,49 @@
+<section class="es-locations xs-pt-20 xs-pb-0 sm-pt-60 sm-pb-0">
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="es-locations-header es-col-xs-6 es-col-sm-5 es-col-md-3">
+        {% if item.locations_title %}
+        <h2 class="title-1 xs-mb-20 text-dark-10">{{ item.locations_title }}</h2>
+        {% endif %}
+        {% if item.locations_text %}
+        <p class="text-20 xs-pr-0 sm-pr-120 xs-mb-30 sm-mb-60">{{ item.locations_text }}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="es-row">
+      {% for loc in location %}
+        {% set location_img = TimberImage(loc.thumbnail)|resize(500,240) %}
+        {% set location_link = loc.get_field('location_link').url %}
+        {% set location_text = loc.get_field('location_link').text %}
+        {% set location_target = loc.get_field('location_link').target %}
+        {% set location_address = loc.get_field('location_address') %}
+        {% set location_phone = loc.get_field('location_phone') %}
+
+        <div class="es-locations-item es-col-xs-6 es-col-sm-2 sm-mb-60 xs-mb-20">
+          <img src="{{ location_img }}"
+                class="xs-mb-10"
+                alt="{{ TimberImage(loc.thumbnail).alt }}">
+          {% if loc.title is not empty %}
+          <h3 class="text-20-bold text-dark-10">{{ loc.title }}</h3>
+          {% endif %}
+          {% if item.locations_show_address %}
+            {# {% if location_address %}
+              <div class="text-20 text-dark-30 xs-mt-5">{{ location_address }}</div>
+            {% endif %} #}
+            {% if location_phone %}
+              <span class="text-15-medium caps text-dark-30 es-hidden-xs es-show-sm sm-mt-5">{{ location_phone }}</span>
+              {% set phone_url = location_phone|replace({' ': '', '(': '', ')': '', '-': ''}) %}
+              <a href="tel: {{ phone_url }}" class="link-blue text-15-medium decoration-none caps es-hidden-sm xs-mt-5">{{ location_phone }}</a>
+            {% endif %}
+          {% endif %}
+          {% if item.locations_show_links %}
+          <div class="xs-mt-10">
+            <a href="{{ location_link }}"
+            class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium" {{ location_target }}>{{ location_text }}</a>
+          </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

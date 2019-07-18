@@ -1,0 +1,36 @@
+<div class="es-nav-top es-hidden-xs es-show-md-flex justify-flex-end sm-pt-15 sm-pb-20" role="navigation">
+  <ul class="list-unstyled flex align-center">
+    <li class="text-13-medium sm-pr-15 sm-pl-15 link-nav-top text-dark-50 flex align-center pointer z4 search-open"  tabindex="0">
+      <img class="es-nav-icon icon-search" src="{{site.theme.link}}/assets/images/search-icon@2x.png" alt="Small icon of a magnifying glass">
+        Search
+    </li>
+    {% set phone_url = options.top_nav_phone|replace({' ': '', '(': '', ')': '', '-': ''}) %}
+    {% if phone_url %}
+    <li class="sm-pr-15 sm-pl-15"><a href="tel:{{ phone_url }}" class="text-13-medium text-blue decoration-none">{{ options.top_nav_phone }}</a></li>
+    {% endif %}
+
+    {% if options.top_nav_contact.text %}
+    <li class="text-13-medium text-dark-50 sm-pr-15 sm-pl-15"><a href="{{ options.top_nav_contact.url }}" class="link-nav-top text-dark-50 decoration-none flex align-center" {{ options.top_nav_contact.target }} >{{ options.top_nav_contact.text }}</a></li>
+    {% endif %}
+
+    {% if options.top_nav_signin.text %}
+      {% if options.top_nav_support.text is empty %}
+        <li class="text-13-medium sm-pl-15">
+      {% else %}
+        <li class="text-13-medium sm-pr-15 sm-pl-15">
+      {% endif %}
+      <a href="{{ options.top_nav_signin.url }}" class="text-dark-50 link-nav-top decoration-none" {{ options.top_nav_signin.target }}>{{ options.top_nav_signin.text }}</a>
+    </li>
+    {% endif %}
+
+    {% if options.top_nav_support.text %}
+    <li class="text-13-medium text-dark-50 sm-pl-15">
+      <a href="{{ options.top_nav_support.url }}" class="link-nav-top text-dark-50 decoration-none flex align-center" {{ options.top_nav_support.target }} >
+        <img class="es-nav-icon icon-support" src="{{site.theme.link}}/assets/images/headphones-icon@2x.png" alt="Small icon of headphones">
+        {{ options.top_nav_support.text }}
+      </a>
+    </li>
+    {% endif %}
+
+  </ul>
+</div>

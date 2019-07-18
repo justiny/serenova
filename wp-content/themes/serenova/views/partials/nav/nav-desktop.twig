@@ -1,0 +1,35 @@
+<ul class="es-hidden-xs es-show-sm-flex list-unstyled flex align-baseline">
+
+    {% for item in menu.items %}
+
+      {% set padding = "" %}
+      {% if loop.first %}
+        {% set padding = "sm-pr-10 md-pr-15" %}
+      {% elseif loop.last and options.nav_button.text is empty %}
+        {% set padding = "sm-pl-15" %}
+      {% else %}
+        {% set padding = "sm-pr-10 md-pr-15 sm-pl-10 md-pl-15" %}
+      {% endif %}
+
+    <li class="text-14-medium {{ padding }} sm-pb-30 sm-pt-30 relative {% if item.slug == wp_title|lower or item.current %} -active{% endif %} {% if item.children %}has-dropdown{% endif %}" {% if item.children %}tabindex="0"{% endif %}>
+      <a href="{{ item.link }}" class="link-nav text-dark-20 decoration-none">{{ item.title }}</a>
+      {% if item.children %}
+        <ul class="es-nav-desktop-dropdown fill-white sm-pt-20 sm-pb-15 sm-pr-15 sm-pl-15 list-unstyled">
+          <li class="es-nav-desktop-dropdown-carat"></li>
+          {% for child in item.children %}
+            <li class="{{ child.current ? '-active' }}">
+              <a class="sm-mt-5 sm-mb-5 text-14-medium link-nav text-dark-20 decoration-none" href="{{ child.link }}">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+         </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+
+  {% if options.nav_button.text is not empty %}
+    <li class="es-hidden-sm es-show-md-flex text-14-medium sm-pl-15 sm-pb-15">
+      <a href="{{ options.nav_button.url }}" class="button button-small button-red decoration-none" {{ options.nav_button.target }}>{{ options.nav_button.text }}</a>
+    </li>
+  {% endif %}
+
+</ul>

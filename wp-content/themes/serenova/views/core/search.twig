@@ -1,0 +1,63 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+<section class="es-search fill-white xs-pb-80">
+  <div class="es-search-header xs-pt-40 xs-pb-40 sm-pt-80 sm-pb-80 sm-mb-60">
+    <div class="es-grid">
+      <div class="es-row">
+        <h1 class="title-1 title-cap text-dark-10 xs-mb-20 es-col-xs-6 es-offset-sm-2 es-col-sm-4">Search results for: <span class="bold">{{ function('get_search_query') }}</span></h1>
+      </div>
+    </div>
+  </div>
+
+  {% for post in posts %}
+
+  <div class="es-grid fill-white">
+    <div class="es-row">
+
+      <div class="es-search-item es-col-xs-6 xs-mb-40">
+        <div class="es-row">
+
+          <div class="es-col-xs-2">
+            {% if post.thumbnail.src %}
+              <img src="{{ post.thumbnail.src | resize(350,250) }}" alt="" class="xs-mb-20"/>
+            {% else %}
+              <img src="{{theme.link}}/assets/images/related-placeholder.jpg" alt="" class="xs-mb-20" style="max-width:100%"/>
+            {% endif %}
+          </div>
+
+          <div class="es-col-xs-4">
+            <h3 class="xs-mb-5">
+              {% if post.post_type == 'resource' %}
+                {% include 'search/search-resource-title-link.twig' %}
+              {% elseif post.post_type == 'press' %}
+                {% include 'search/search-press-title-link.twig' %}
+              {% elseif post.post_type == 'product' %}
+                {% include 'search/search-product-title-link.twig' %}
+              {% elseif post.post_type == 'post' or post.post_type == 'page' and not post.post_type == 'resource' and not post.post_type == 'press' and not post.post_type == 'product'    %}
+                <a href="{{ post.link }}" class="text-20-bold text-dark-10 decoration-none">{{ post.title }}</a>
+              {% endif %}
+            </h3>
+            {% include 'search/search-term.twig' %}
+            <p class="text-16 text-dark-30 xs-mt-15 xs-mb-20">{{post.post_content|excerpt(20)}}</p>
+            {% if post.post_type == 'resource' %}
+             {% include 'search/search-resource-link.twig' %}
+            {% elseif post.post_type == 'press' %}
+              {% include 'search/search-press-link.twig' %}
+            {% elseif post.post_type == 'product' %}
+              {% include 'search/search-product-link.twig' %}
+            {% elseif post.post_type == 'post' or post.post_type == 'page' and not post.post_type == 'resource' and   not post.post_type == 'press' and not post.post_type == 'product'    %}
+              <a href="{{ post.link }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Read More</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="es-search-empty es-col-xs-6 xs-mt-30">
+        <h3 class="title-2 text-dark-10">Search turned up empty.  Try again? </h3>
+      </div>
+      {% endfor %}
+    </div>
+    {% include 'partials/listing-pagination.twig' %}
+  </div>
+</section>
+{% endblock %}

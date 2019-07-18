@@ -1,0 +1,23 @@
+<ul class="list-unstyled list-flex flex-row xs-mt-30 justify-center xs-mb-30">
+    {% if posts.pagination.prev %}
+    <li class="xs-mr-10"><a href="{{posts.pagination.prev.link}}" class="pagination-link text-16-bold decoration-none text-blue-dark prev caps {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a></li>
+    {% else %}
+    <li class="xs-mr-10" style="opacity:0;display:none;"><a href="/" class="pagination-link text-16-bold decoration-none text-blue-dark prev caps {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a></li>
+    {% endif %}
+    {% for page in posts.pagination.pages %}
+      {% if posts.pagination.pages is not empty %}
+      <li class="xs-mr-10">
+      {% if page.link %}
+        <a href="{{page.link}}" class="pagination-link text-16-bold decoration-none {{page.class}} {{ ( page.current ? 'text-blue-light' : 'text-blue-dark') }}">{{page.title}}</a>
+        {% else %}
+        <span class="text-16-bold decoration-none text-blue-dark {{page.class}} {{ ( page.current ? 'text-blue-light' : 'text-blue-dark') }}">{{page.title}}</span>
+        {% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+    {% if posts.pagination.next %}
+    <li class="xs-mr-10"><a href="{{posts.pagination.next.link}}" class="pagination-link text-16-bold decoration-none text-blue-dark next caps {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a></li>
+    {% else %}
+    <li class="xs-mr-10"><a href="/" style="opacity:0;display:none" class="pagination-link text-16-bold decoration-none text-blue-dark next caps {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a></li>
+    {% endif %}
+</ul>

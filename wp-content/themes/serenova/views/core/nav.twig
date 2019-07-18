@@ -1,0 +1,20 @@
+{% include 'partials/nav/nav-announcement-bar.twig' %}
+{% include 'partials/nav/nav-search.twig' %}
+<nav class="es-nav fill-white">
+  {# Mobile top nav #}
+  {% include 'partials/nav/nav-mobile-top.twig' %}
+  <div class="xs-pl-20 sm-pl-15 sm-pr-15 md-pl-30 md-pr-30 xl-pl-80 xl-pr-80 relative">
+    {# Desktop top nav #}
+    {% include 'partials/nav/nav-desktop-top.twig' %}
+    <div class="flex justify-space-between align-center" role="navigation">
+      <a href="{{ site.link }}" class="es-nav-logo md-pb-15">
+        <img src="{{ options.logo_desktop }}" alt="Serenova Logo">
+      </a>
+      {# Desktop Nav #}
+      {% include 'partials/nav/nav-desktop.twig' %}
+      {# Mobile Nav Trigger and Links #}
+      {% include 'partials/nav/nav-mobile-triggers.twig' %}
+    </div>
+    {% include 'partials/nav/nav-mobile.twig' %}
+  </div>
+</nav>

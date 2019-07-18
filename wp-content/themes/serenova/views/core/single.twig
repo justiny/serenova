@@ -1,0 +1,53 @@
+{% extends "layouts/base.twig" %}
+{% block content %}
+<section class="es-simple-header xs-pt-40 xs-pr-25 xs-pb-40 xs-pl-25 sm-pt-80 sm-pr-0 sm-pb-80 sm-pl-0 sm-mb-60 md-pb-100 md-pt-100 fill-white">
+  <div class="es-grid">
+    <div class="es-row">
+      <h1 class="title-1 text-dark-10 xs-mb-20 es-col-xs-6 es-offset-sm-2 es-col-sm-3">{{ post.title }}</h1>
+      {% if post.post_type == 'press' %}
+      <div class="es-col-xs-6 es-offset-sm-2 es-col-sm-4 text-20 text-dark-70">{{ post.date }}</div>
+      {% else %}
+      <div class="es-col-xs-6 es-offset-sm-2 es-col-sm-4 text-20 text-dark-70">{% if post.author_name is not empty %}By {{ post.author_name }} |{% endif %} {{ post.date }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="es-col-xs-6 es-col-sm-2 es-rich-text">
+        <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
+        <p class="caption xs-mt-5">{{ post.thumbnail.caption }}</p>
+      </div>
+      <div class="serenovaBlogContent es-col-xs-6 es-col-sm-4 xs-mb-40 es-rich-text">
+        {{ post.content }}
+
+        {% if post.author_name is not empty %}
+        <hr class="serenovaBlogContent-divider -top">
+
+        <div class="serenovaBlogContent-author flex xs-flex-column sm-flex-row">
+          <div class="align-start xs-mr-30">
+            <img src="{{ TimberImage(post.author_image).src }}" class="serenovaBlogContent-author-image sm-mb-0 xs-mb-20">
+          </div>
+          <div class="serenovaBlogContent-author-content">
+            <p>{{ post.author_info }}</p>
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+    {% if post.post_type == 'post'%}
+    {% include 'partials/related-posts/blog-related.twig' %}
+    {% include 'partials/card-cta/blog-cta.twig' %}
+    {% elseif post.post_type == 'press' %}
+    {% include 'partials/related-posts/press-related.twig' %}
+    {% include 'partials/card-cta/press-cta.twig' %}
+    {% elseif post.post_type == 'location' %}
+    {% include 'partials/related-posts/locations-related.twig' %}
+    {% include 'partials/card-cta/locations-cta.twig' %}
+    {% elseif post.post_type == 'product' %}
+    {% include 'partials/related-posts/product-related.twig' %}
+    {% include 'partials/card-cta/product-cta.twig' %}
+    {% endif %}
+  </div><!-- /content-wrapper -->
+{% endblock %}

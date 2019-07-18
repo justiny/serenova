@@ -1,0 +1,26 @@
+<section class="logo-blocks xs-pt-40 xs-pb-40 sm-pt-60 sm-pb-60 fill-white">
+  <div class="logo-blocks-header flex flex-column justify-center">
+    {% if item.logo_title is not empty or item.logo_text is not empty %}
+      {% if item.logo_title %}
+      <div class="es-col-xs-6 es-col-sm-4 es-offset-sm-1 text-center-left">
+        <h2 class="title-1 text-dark-10 md-pl-50 md-pr-50">{{ item.logo_title }}</h2>
+      </div>
+      {% endif %}
+      {% if item.logo_text %}
+      <div class="es-col-xs-6 es-col-sm-4 es-offset-sm-1 xs-mt-20 text-center-left">
+        <p class="text-20 text-dark-30 xs-pr-0 xs-pl-0 sm-pr-80 sm-pl-80 md-pr-100 md-pl-100">{{ item.logo_text }}</p>
+      </div>
+      {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="logo-blocks-items flex flex-wrap xs-mt-40">
+    {% for lb in item.logo_blocks %}
+    {% set logo_image = TimberImage(lb.logo_image).src|tojpg|resize(720, 418) %}
+    {% set logo_alt = TimberImage(lb.logo_image).alt %}
+    <div class="logo-blocks-item flex">
+      <img src="{{ logo_image }}" alt="{{ logo_alt }}">
+    </div>
+    {% endfor %}
+  </div>
+</section>

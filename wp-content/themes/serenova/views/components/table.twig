@@ -1,0 +1,28 @@
+<section class="es-table xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60">
+  <div class="xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60 fill-white">
+    <div class="es-grid">
+      <div class="es-row">
+        {% if item.table_title is not empty %}
+        <h2 class="title-1 text-dark-10 xs-mb-30 es-col-xs-6">{{ item.table_title }}</h2>
+        {% endif %}
+        {% if item.table_text is not empty %}
+          <div class="es-col-xs-6 es-col-md-3 text-20 text-dark-30">
+            {{ item.table_text }}
+          </div>
+        {% endif %}
+        {% if item.table_content is not empty %}
+          <div class="es-col-xs-6 xs-mb-30">
+            <div class="es-table-scroll-container es-rich-text es-rich-text-table xs-mt-30">
+              {{ item.table_content }}
+            </div>
+          </div>
+        {% endif %}
+        {% if item.table_button.url is not empty %}
+          <div class="es-col-xs-6 flex">
+            <a href="{{ item.table_button.url }}" class="button button-blue button-medium text-15-bold text-white" {{ item.table_button.target}}>{{ item.table_button.text }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

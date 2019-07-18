@@ -1,0 +1,41 @@
+body.login {
+  background-image: url("../images/header-graphic-left@2x.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: -600px;
+}
+
+#login p a {
+  color: #112456 !important;
+}
+
+.login h1 a {
+  background-image: url("../images/serenova-logo@2x.png") !important;
+  height: 44px !important;
+  width: 202px !important;
+  background-size: 100% !important;
+}
+
+.login .message {
+  border-left: 4px solid #112456 !important;
+}
+
+.login .submit .button {
+  background: #112456;
+  border: 0;
+  text-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.login .submit .button:hover {
+  background: #112456;
+  opacity: 0.9;
+}
+
+.login form .input,
+.login input[type="text"] {
+  font-size: 16px !important;
+  padding: 10px !important;
+}

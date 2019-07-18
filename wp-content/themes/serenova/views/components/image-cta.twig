@@ -1,0 +1,36 @@
+<section class="es-image-cta xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60">
+  <div class="fill-white">
+    <div class="es-grid">
+      <div class="es-row">
+        <div class="es-col-xs-6 es-col-sm-4 es-col-md-4 es-col-lg-3 xs-pt-70 xs-pb-70">
+          <div class="es-image-cta-content{{ (item.image_cta_position == 'Right' ? ' -is-right' : '') }}">
+            {% if item.title_type == 'Text' %}
+            <h2 class="title-1 text-dark-10 title-cap xs-mb-20">{{ item.image_cta_title }}</h2>
+            {% else %}
+            <img src="{{ TimberImage(item.image_title).src }}" alt="{{ TimberImage(item.image_title).alt }}" style="max-width: {{ item.image_title_max_width }}px" class="xs-mb-20">
+            {% endif %}
+            <div class="text-20 text-dark-30">{{ item.image_cta_text }}</div>
+            {% if item.image_cta_link.text is not empty %}
+            <div class="flex flex-wrap align-center xs-flex-column sm-flex-row xs-mt-40">
+              {% if item.image_cta_link.text is not empty %}
+                <a href="{{ item.image_cta_link.url }}" class="text-15-medium caps link-blue link-arrow-blue decoration-none" {{ item.image_cta_link.target }}>{{ item.image_cta_link.text }}</a>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="es-image-cta-image es-col-sm-2 es-col-md-2 es-col-lg-3 relative {{ (item.image_cta_position == 'Right' ? ' -is-right' : '') }}">
+          {% if item.image_cta_image is not empty %}
+            <div class="es-image-cta-image-img absolute"
+              style="background-image:url({{ TimberImage(item.image_cta_image).src }})">
+            </div>
+          {% else %}
+            <div class="es-image-cta-image-placeholder absolute"
+              style="background-image:url({{ theme.link }}/assets/images/image-cta-graphic@2x.png);">
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

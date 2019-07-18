@@ -1,0 +1,31 @@
+<section class="xs-pb-20 sm-pb-80">
+  <div class="es-image-header xs-pr-10 xs-pl-10 xs-pt-40 xs-pb-40 sm-pt-0 sm-pb-0 sm-pr-0 sm-pl-0 sm-mb-150" style="background-image: url({{ TimberImage(item.background_image).src }});">
+    <div class="sm-nmb-120 flex flex-column">
+      <div class="es-image-header-content sm-pt-120">
+        <div class="es-image-header-card fill-white header-card-shadow xs-pt-40 xs-pb-40 xs-pr-15 xs-pl-15 sm-pb-65 sm-pt-65 sm-pr-40 sm-pb-55 xl-pt-95 xl-pr-90 xl-pb-80 sm-nmb-50">
+          <div class="es-image-header-card-inner">
+            <h1 class="title-1 text-dark-10 xs-mb-20">{{ item.card_title }}</h1>
+            {% if item.card_text is not empty %}
+              <div class="text-20 text-dark-30 xs-mb-25">{{ item.card_text }}</div>
+            {% endif %}
+            {% if item.card_button.text is not empty or item.card_link.text is not empty %}
+            <div class="flex flex-wrap align-center xs-flex-column sm-flex-row es-image-header-card-actions">
+              {% if item.card_button.text is not empty %}
+                <a href="{{ item.card_button.url }}" class="button button-blue button-medium xs-mb-25 md-mb-0 md-mr-40" {{ item.card_button.target }}>{{ item.card_button.text }}</a>
+              {% endif %}
+              {% if item.card_link.text is not empty and item.add_link_or_video == 'link' %}
+                <a href="{{ item.card_link.url }}" class="text-15-medium caps link-blue link-arrow-blue link-arrow-blue-no-animate decoration-none" {{ item.card_link.target }}>{{ item.card_link.text }}</a>
+              {% endif %}
+              {% if item.add_link_or_video == 'video' and item.video_link_type == 'local' %}
+                <a class="video-callout-item-video venobox text-15-medium caps link-blue link-arrow-blue link-arrow-blue-no-animate decoration-none" data-autoplay="true" data-vbtype="iframe" href="{{ item.local_url }}">{{ item.link_text }}</a>
+              {% elseif item.add_link_or_video == 'video' and item.video_link_type == 'vimeo' %}
+                <a class="video-callout-item-video venobox text-15-medium caps link-blue link-arrow-blue link-arrow-blue-no-animate decoration-none" data-autoplay="true" data-vbtype="video" href="http://youtu.be/{{ item.vimeo_id }}">{{ item.link_text }}</a>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

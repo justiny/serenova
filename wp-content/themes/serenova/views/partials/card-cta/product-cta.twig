@@ -1,0 +1,75 @@
+{% if options.product_cc_title is not empty %}
+<section class="card-cta xs-pb-20 xs-pt-20 sm-pb-60 sm-pt-60">
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="card-cta-full es-col-xs-6 xs-mb-20 sm-mb-30">
+        <div class="card-cta-full-inner flex xs-flex-column md-flex-row fill-white xs-pt-40 xs-pr-15 xs-pb-40 xs-pl-15 sm-pr-80 sm-pl-30 md-pt-60 md-pr-140 md-pb-40">
+          <img class="xs-mb-10 md-mb-0 sm-mr-40" src="{{ TimberImage(options.product_cc_icon).src }}"
+              alt="{{ TimberImage(options.product_cc_icon).alt }}"
+            >
+          <div class="card-cta-inner-content">
+            {% if options.product_cc_title is not empty %}
+            <h3 class="title-1 xs-mb-20 text-dark-10">{{ options.product_cc_title }}</h3>
+            {% endif %}
+            {# buttons and link here #}
+            <div class="card-cta-full-inner-buttons flex xs-flex-column sm-flex-row xs-align-center">
+              {% if options.product_cc_button is not empty %}
+              <a href="{{ options.product_cc_button.url }}" class="button button-blue button-medium xs-mr-0 sm-mr-40 caps" {{ options.product_cc_button.target}}>{{ options.product_cc_button.text }}</a>
+              {% endif %}
+              {% if options.product_cc_link is not empty %}
+              <a href="{{ options.product_cc_link.url }}" class="link-blue link-arrow-blue link-arrow-blue-no-animate text-blue decoration-none caps text-15-medium xs-mt-30 sm-mt-0" {{ options.product_cc_link.target}}>{{ options.product_cc_link.text }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if options.product_cc_left_title is not empty %}
+        <div class="card-cta-half-bottom es-col-xs-6 es-col-sm-3 xs-mb-20 sm-mb-0">
+          <div class="card-cta-half-bottom-inner flex xs-flex-column md-flex-row md-align-center fill-white xs-pt-40 xs-pr-15 xs-pb-40 xs-pl-15 sm-pt-45 sm-pl-30 sm-pr-30 sm-pb-30">
+            <img src="{{ TimberImage(options.product_cc_left_icon).src }}"
+              class="xs-mb-10 md-mb-0 sm-mr-40"
+              alt="{{ TimberImage(options.product_cc_left_icon).alt }}"
+            >
+            <div>
+              {% if options.product_cc_left_title is not empty %}
+              <h3 class="text-20-bold xs-mb-20 text-dark-10">{{ options.product_cc_left_title }}</h3>
+              {% endif %}
+              {% if options.product_cc_left_text is not empty %}
+              <p class="text-16 xs-mb-20 relative">{{ options.product_cc_left_text }}</p>
+              {% endif %}
+              {% if options.product_link_style_left == 'Link' and options.product_cc_left_link is not empty %}
+              <a href="{{ options.product_cc_left_link.url }}" class="link-blue link-arrow-blue link-arrow-blue-no-animate relative text-blue decoration-none caps text-15-medium" {{options.product_cc_left_link.target}}>{{ options.product_cc_left_link.text }}</a>
+              {% elseif options.product_link_choice_left == 'Plain Text' and options.product_cc_left_plain is not empty %}
+              <p class="text-blue-dark caps text-15-medium xs-mt-0">{{ options.product_cc_left_plain }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% if options.product_cc_right_title is not empty %}
+        <div class="card-cta-half-top es-col-xs-6 es-col-sm-3 xs-mb-20 sm-mb-0">
+          <div class="card-cta-half-top-inner flex xs-flex-column md-flex-row md-align-center fill-white xs-pt-40 xs-pr-15 xs-pb-40 xs-pl-15 sm-pt-45 sm-pl-30 sm-pr-30 sm-pb-30">
+            <img src="{{ TimberImage(options.product_cc_right_icon).src }}"
+              class="xs-mb-10 md-mb-0 sm-mr-40"
+              alt="{{ TimberImage(options.product_cc_right_icon).alt }}"
+            >
+            <div>
+              {% if options.product_cc_right_title is not empty %}
+              <h3 class="text-20-bold xs-mb-20 text-dark-10">{{ options.product_cc_right_title }}</h3>
+              {% endif %}
+              {% if options.product_cc_right_text is not empty %}
+              <p class="text-16 xs-mb-20">{{ options.product_cc_right_text }}</p>
+              {% endif %}
+              {% if options.product_link_style_right == 'Link' and options.product_cc_right_link is not empty %}
+              <a href="{{ options.product_cc_right_link.url }}" class="link-blue link-arrow-blue link-arrow-blue-no-animate relative text-blue decoration-none caps text-15-medium" {{options.product_cc_right_link.target}}>{{ options.product_cc_right_link.text }}</a>
+              {% elseif options.product_link_style_right == 'Plain Text' and options.product_cc_right_plain is not empty %}
+              <p class="text-blue-dark caps text-15-medium xs-mt-0">{{ options.product_cc_right_plain }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      </div>
+    </div>
+</section>
+{% endif %}

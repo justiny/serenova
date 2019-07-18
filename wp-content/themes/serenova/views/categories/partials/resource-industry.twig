@@ -1,0 +1,47 @@
+{% for post in industry %}
+  {% set url = "" %}
+  {% set url_text = "" %}
+  {% set target = "" %}
+  {% set link_text = "" %}
+
+  {% if post.get_field('add_link_or_pdf') == 'Link' %}
+    {% if post.get_field('resources_link').url is not empty %}
+      {% set url = post.get_field('resources_link').url %}
+      {% set h3_text =  post.title  %}
+      {% set target = post.get_field('resources_link').target %}
+      {% set link_text = post.get_field('resources_link').text %}
+    {% endif %}
+  {% elseif post.get_field('add_link_or_pdf') == 'PDF' %}
+    {% if post.get_field('resources_pdf') is not empty %}
+      {% set url = post.get_field('resources_pdf') %}
+      {% set h3_text =  post.title  %}
+      {% set target = 'target = "_blank"' %}
+      {% set link_text = "Download PDF" %}
+    {% endif %}
+  {% else %}
+      {% set url = post.link %}
+      {% set h3_text =  post.title  %}
+      {% set link_text = "Read More" %}
+      {% set target = "" %}
+  {% endif %}
+
+<div class="es-search-item es-col-xs-6 es-col-sm-2 xs-mb-40">
+
+  {% if post.thumbnail %}
+  <a href="{{ url }}" class="xs-mb-20">
+    <img src="{{ post.thumbnail.src|resize(600, 400) }}" />
+  </a>
+  {% endif %}
+
+  <h3 class="xs-mb-5">
+    <a href="{{ url }}" class="text-20-bold text-dark-10 decoration-none" {{ target }}>{{ h3_text }}</a>
+  </h3>
+
+  {% for term in post.terms('resource-category') %}
+  <a class="text-13-bold decoration-none text-dark-70" href="{{ term.link }}" title="View all posts in {{ term.name }}" rel="category tag">{{ term.name }}</a>{% if loop.last == false %},{% endif %}
+  {% endfor %}
+
+  <p class="text-16 text-dark-30 xs-mt-15 xs-mb-20">{{post.post_content|excerpt(20)}}</p>
+  <a href="{{ url }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium" {{target}}>{{ link_text }}</a>
+</div>
+{% endfor %}

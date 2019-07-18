@@ -1,0 +1,20 @@
+<section class="es-col-image xs-pb-20 xs-pt-20 sm-pb-60 sm-pt-60 {{ (item.video_background_white ? 'fill-white' : '') }}">
+  <div class="es-grid">
+    <div class="es-row">
+      <div class="es-col-xs-6 es-col-sm-4 es-offset-xs-1 es-offset-sm-0">
+        <div class="es-ui-spread-video">
+        {% if item.video_type == "vimeo" or item.video_type == "youtube" %}
+          <div class="plyr-video-embed" data-plyr-provider="{{ item.video_type }}" data-plyr-embed-id="{{ item.video_url }}"></div>
+        {% elseif item.video_type == "local" %}
+          <video class="plyr-video-embed" poster="{{ TimberImage(item.video_poster).src }}" controls>
+            <source src="{{ item.video_local_mp4 }}" type="video/mp4">
+          {% if item.video_local_webm %}
+            <source src="{{ item.video_local_webm }}" type="video/webm">
+          {% endif %}
+          </video>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

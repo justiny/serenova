@@ -1,0 +1,43 @@
+<section class="featured-cards xs-pt-20 sm-pt-60 sm-pb-20">
+  <div class="es-grid">
+
+      <div class="featured-cards-header flex flex-column text-center xs-mb-60">
+        <h2 class="title-1 es-col-xs-6 xs-mb-10 text-center-left text-dark-10">{{ item.fc_title }}</h2>
+        {% if item.fc_subtitle is not empty %}
+        <p class="text-16 text-dark-30 text-20">{{ item.fc_subtitle }}</p>
+        {% endif %}
+      </div>
+      <div class="es-row justify-center">
+      {% for fc in item.featured_cards %}
+        <div class="featured-cards-wrapper{{ ( loop.length == '2' ? '-half' : '' ) }} xs-mb-20 sm-mb-40">
+          {% if fc.fc_link.url is not empty %}
+          <a class="featured-cards-item decoration-none" href="{{ fc.fc_link.url }}">
+          {% endif %}
+            <div class="featured-cards-item-inner fill-white flex xs-flex-column">
+              {% if item.fc_small_cards == 1 %}
+              <div class="featured-cards-item-inner-image" style="background-image: url({{ TimberImage(fc.fc_image).src }}); padding-top: 24%;"></div>
+              {% else %}
+              <div class="featured-cards-item-inner-image" style="background-image: url({{ TimberImage(fc.fc_image).src }});"></div>
+              {% endif %}
+              <div class="xs-pt-25 xs-pb-25 xs-pr-15 sm-pr-30 xs-pl-15 sm-pl-30">
+                {% if fc.fc_title is not empty %}
+                <h3 class="text-20-bold xs-mb-20 text-dark-10">{{ fc.fc_title }}</h3>
+                {% endif %}
+                {% if fc.fc_text is not empty %}
+                <p class="text-16 text-dark-30">{{ fc.fc_text }}</p>
+                {% endif %}
+              </div>
+              {% if fc.fc_link is not empty %}
+              <div class="featured-cards-link-bottom xs-pb-25 xs-pr-15 sm-pr-30 xs-pl-15 sm-pl-30" {{ fc.fc_link.target }}>
+                <span class="link-blue link-arrow-blue link-arrow-blue-no-animate text-blue decoration-none caps text-15-medium"> {{ fc.fc_link.text }} </span>
+              </div>
+              {% endif %}
+            </div>
+          {% if fc.fc_link.url is not empty %}
+          </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

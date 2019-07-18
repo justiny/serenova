@@ -1,0 +1,5 @@
+{% if post.get_field('add_link_or_pdf') == 'Link' %}
+  <a href="{{ post.get_field('resources_link').url }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium" {{post.get_field('resources_link').target}}>{{ post.get_field('resources_link').text }}</a>
+{% elseif post.get_field('add_link_or_pdf') == 'PDF' %}
+  <a href="{{ post.get_field('resources_pdf') }}" class="link-blue link-arrow-blue text-blue decoration-none caps text-15-medium">Download PDF</a>
+{% endif %}

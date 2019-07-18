@@ -1,0 +1,28 @@
+<section class="es-bio xs-pt-20 xs-pb-20 sm-pt-60 sm-pb-60">
+  <div class="es-grid">
+    <div class="es-row justify-center">
+    {% for bio in item.br_bios %}
+      <div class="es-bio-item es-col-xs-6 es-col-sm-5 xs-mb-30">
+        <div class="flex flex-wrap sm-pl-20 sm-pr-20">
+        {% if bio.br_image %}
+        <div class="es-bio-image xs-mb-15">
+          <img src="{{ TimberImage(bio.br_image).src|resize(210, 210) }}" alt="{{ TimberImage(bio.br_image).alt }}">
+        </div>
+
+        {% endif %}
+        {% if bio.br_title is not empty and bio.br_author is not empty and bio.br_text is not empty %}
+          <div class="es-bio-text">
+            <h2 class="title-2 text-dark-10 xs-mb-5">{{ bio.br_author }}</h2>
+            <h2 class="text-15-bold caps text-dark-30 xs-mb-15">{{ bio.br_title }}</h2>
+            <div class="text-20 text-dark-30">{{ bio.br_text }}</div>
+          </div>
+        {% endif %}
+      </div>
+      {% if not loop.last %}
+        <hr class="xs-mt-30">
+      {% endif %}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>

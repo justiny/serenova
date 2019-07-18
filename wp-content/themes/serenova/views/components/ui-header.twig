@@ -1,0 +1,47 @@
+<section class="es-ui-header xs-pt-40 sm-pt-60 md-pt-80 xs-nmb-35 sm-nmb-65 z2 relative">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.3.23/plyr.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.3.23/plyr.polyfilled.min.js"></script>
+  <div class="es-ui-header-content xs-pr-20 xs-pl-20 sm-pr-0 sm-pl-0 flex xs-flex-column sm-flex-row sm-justify-center z2 relative">
+    <div class="es-ui-header-screen">
+      <div class="es-ui-header-screen-container relative">
+        <div class="es-ui-header-ui">
+          <div class="es-ui-header-video-container">
+            <div class="es-browser-chrome">
+              <div class="es-browser-chrome-dot"></div>
+              <div class="es-browser-chrome-dot"></div>
+              <div class="es-browser-chrome-dot"></div>
+            </div>
+            {% if item.ui_header_type == 'video' %}
+              <div class="es-ui-header-video">
+                {% if item.ui_header_video_type == "vimeo" or item.ui_header_video_type == "youtube" %}
+                  <div class="plyr-video-embed" data-plyr-provider="{{ item.ui_header_video_type }}" data-plyr-embed-id="{{ item.ui_header_video_url }}"></div>
+                {% elseif item.ui_header_video_type == "local" %}
+                  <video class="plyr-video-embed" poster="{{ TimberImage(item.ui_header_video_poster).src }}" controls loop mute>
+                    <source src="{{ item.ui_header_video_local_mp4 }}" type="video/mp4">
+                    {% if item.ui_header_video_local_webm %}
+                    <source src="{{ item.ui_header_video_local_webm }}" type="video/webm">
+                    {% endif %}
+                  </video>
+                {% endif %}
+              </div>
+            {% elseif item.ui_header_type == 'image' %}
+              <img class="es-ui-header-image" src="{{ TimberImage(item.ui_header_image).src }}" alt="{{ TimberImage(item.ui_header_image).alt }}" >
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="es-ui-header-copy">
+      <h1 class="title-1 text-dark-10 xs-mb-20 xs-mt-20">{{ item.ui_header_title }}</h1>
+      {% if item.ui_header_text is not empty %}
+        <div class="text-20 text-dark-30 xs-mb-30">{{ item.ui_header_text }}</div>
+      {% endif %}
+      {% if item.ui_header_link.text is not empty %}
+        <a href="{{ item.ui_header_link.url }}" class="text-15-medium caps link-blue text-blue link-arrow-blue decoration-none" {{ item.ui_header_link.target }}>{{ item.ui_header_link.text }}</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="es-ui-header-swoosh z1 relative">
+    <svg viewbox=" 0 0 1227 242" xmlns="http://www.w3.org/2000/svg"><path d="M1211.327 280.772C849.344 185.372 321.32 77.422-32.045-6.952c-235.578-56.25-219.722 56.424 47.568 338.022 899.516-6.667 1298.117-23.433 1195.804-50.298z" fill="#97DCF0" fill-rule="evenodd"/></svg>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+{% if post.post_type == 'post' %}
+  {% for term in post.terms('category') %}
+      <a class="text-13-bold decoration-none text-dark-70" href="{{ term.link }}" title="View all posts in {{ term.name }}" rel="category tag">{{ term.name }}</a> <span class="text-13-bold decoration-none text-dark-70">in {{ post.post_type|capitalize }}</span> {% if loop.last == false %},{% endif %}
+    {% endfor %}
+{% elseif post.post_type == 'press' %}
+  {% for term in post.terms('press-category') %}
+    <a class="text-13-bold decoration-none text-dark-70" href="{{ term.link }}" title="View all posts in {{ term.name }}" rel="category tag">{{ term.name }}</a> <span class="text-13-bold decoration-none text-dark-70">in {{ post.post_type|capitalize }}</span>{% if loop.last == false %},{% endif %}
+  {% endfor %}
+{% elseif post.post_type == 'resource' %}
+  {% for term in post.terms('resource-category') %}
+    <a class="text-13-bold decoration-none text-dark-70" href="{{ term.link }}" title="View all posts in {{ term.name }}" rel="category tag">{{ term.name }}</a> <span class="text-13-bold decoration-none text-dark-70">in {{ post.post_type|capitalize }}</span> {% if loop.last == false %},{% endif %}
+  {% endfor %}
+{% elseif post.post_type == 'product' %}
+  {% for term in post.terms('product-category') %}
+    <a class="text-13-bold decoration-none text-dark-70" href="{{ term.link }}" title="View all posts in {{ term.name }}" rel="category tag">{{ term.name }}</a> <span class="text-13-bold decoration-none text-dark-70">in {{ post.post_type|capitalize }}</span> {% if loop.last == false %},{% endif %}
+  {% endfor %}
+{% endif %}
