@@ -1,0 +1,1 @@
+../../files/wp-rocket/config/advanced-config.php
