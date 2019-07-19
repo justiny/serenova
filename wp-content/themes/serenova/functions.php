@@ -7,9 +7,13 @@ if ( class_exists( 'ES\\Init' ) ) :
   ES\Init::register_services();
 endif;
 
-if ( class_exists( 'Timber' ) ){
-    Timber::$cache = true;
-}
+add_filter( 'timber/cache/mode', function () {
+        return 'none';
+    } );
+
+// if ( class_exists( 'Timber' ) ){
+//     Timber::$cache = true;
+// }
 
 // Order Search Results by Post Type
 // https://wordpress.stackexchange.com/questions/177650/sort-search-results-by-post-type
