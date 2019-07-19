@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 use Composer\AutoloadWPMediaImagifyWordPressPlugin\ClassLoader as ClassLoaderWPMediaImagifyWordPressPlugin;
 
 
-class ComposerStaticInit227da79a48485de04a5bdc367a98073e
+class ComposerStaticInitc75cefd5fcd7d6d644e0342a0ffbe040
 {
     public static $prefixLengthsPsr4 = array (
         'I' => 
@@ -162,6 +162,7 @@ class ComposerStaticInit227da79a48485de04a5bdc367a98073e
         'Composer\\Installers\\ZikulaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
         'Dangoodman\\ComposerForWordpress\\ComposerForWordpress' => __DIR__ . '/..' . '/dangoodman/composer-for-wordpress/ComposerForWordpress.php',
         'Imagify' => __DIR__ . '/../..' . '/inc/classes/class-imagify.php',
+        'Imagify\\Auth\\Basic' => __DIR__ . '/../..' . '/classes/Auth/Basic.php',
         'Imagify\\Bulk\\AbstractBulk' => __DIR__ . '/../..' . '/classes/Bulk/AbstractBulk.php',
         'Imagify\\Bulk\\BulkInterface' => __DIR__ . '/../..' . '/classes/Bulk/BulkInterface.php',
         'Imagify\\Bulk\\CustomFolders' => __DIR__ . '/../..' . '/classes/Bulk/CustomFolders.php',
@@ -272,9 +273,9 @@ class ComposerStaticInit227da79a48485de04a5bdc367a98073e
     public static function getInitializer(ClassLoaderWPMediaImagifyWordPressPlugin $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit227da79a48485de04a5bdc367a98073e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit227da79a48485de04a5bdc367a98073e::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit227da79a48485de04a5bdc367a98073e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc75cefd5fcd7d6d644e0342a0ffbe040::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc75cefd5fcd7d6d644e0342a0ffbe040::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc75cefd5fcd7d6d644e0342a0ffbe040::$classMap;
 
         }, null, ClassLoaderWPMediaImagifyWordPressPlugin::class);
     }
