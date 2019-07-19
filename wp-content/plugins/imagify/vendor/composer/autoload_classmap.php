@@ -98,6 +98,7 @@ return array(
     'Composer\\Installers\\ZikulaInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
     'Dangoodman\\ComposerForWordpress\\ComposerForWordpress' => $vendorDir . '/dangoodman/composer-for-wordpress/ComposerForWordpress.php',
     'Imagify' => $baseDir . '/inc/classes/class-imagify.php',
+    'Imagify\\Auth\\Basic' => $baseDir . '/classes/Auth/Basic.php',
     'Imagify\\Bulk\\AbstractBulk' => $baseDir . '/classes/Bulk/AbstractBulk.php',
     'Imagify\\Bulk\\BulkInterface' => $baseDir . '/classes/Bulk/BulkInterface.php',
     'Imagify\\Bulk\\CustomFolders' => $baseDir . '/classes/Bulk/CustomFolders.php',
