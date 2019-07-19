@@ -7,9 +7,10 @@ if ( class_exists( 'ES\\Init' ) ) :
   ES\Init::register_services();
 endif;
 
+// remove timber caching
 add_filter( 'timber/cache/mode', function () {
-        return 'none';
-    } );
+    return 'none';
+} );
 
 // if ( class_exists( 'Timber' ) ){
 //     Timber::$cache = true;
