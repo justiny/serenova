@@ -147,7 +147,7 @@ if ( ! defined( 'WP_DEBUG' ) ) {
     define('WP_DEBUG', false);
 }
 
-define('WP_CACHE', false);
+define('WP_CACHE', true);
 define('DISALLOW_FILE_EDIT', false);
 
 /* That's all, stop editing! Happy Pressing. */
