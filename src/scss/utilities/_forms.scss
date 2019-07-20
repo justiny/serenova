@@ -1,0 +1,74 @@
+//
+// Forms Base Styles
+// --------------------------------------------------
+
+.text-input,
+.textarea,
+.select {
+  border: 1px solid $border-gray;
+  background-color: $fill-white;
+  padding: pxem(15);
+  width: 100%;
+  transition: border 240ms $t-1;
+
+  &:focus,
+  &:active {
+    border: 1px solid $border-gray;
+    outline: none;
+  }
+
+  &--error {
+    box-shadow: 0 0 0 3px $fill-red;
+  }
+}
+
+label {display: block;}
+
+/* stylelint-disable property-no-vendor-prefix */
+
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #5f6065;
+  border-radius: pxem(3);
+  @include akkurat;
+  font-size: 16px;
+  line-height: 1;
+
+  &:focus,
+  &:active {
+    border: 1px solid $fill-blue;
+  }
+}
+
+.select-wrapper {
+  position: relative;
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #979797;
+    position: absolute;
+    right: 10px;
+    top: 45%;
+  }
+}
+/* stylelint-enable */
+
+// Hide select arrow in IE 10+
+
+select::-ms-expand,
+.select::-ms-expand {
+  display: none;
+}
+
+.textarea {
+  height: pxem(150);
+}
+
+div.wpcf7 .ajax-loader {
+  display: none;
+}

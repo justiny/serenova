@@ -1,0 +1,18 @@
+[role="button"]:focus,
+[role="button"]:active,
+.es-nav-logo:focus {
+  outline-color: $fill-blue;
+  outline-width: 1px;
+  outline-style: auto;
+}
+
+.es-nav-top-mobile {
+
+  a:focus,
+  [role="button"]:focus,
+  [role="button"]:active {
+    outline-color: $fill-white;
+    outline-width: 1px;
+    outline-style: auto;
+  }
+}

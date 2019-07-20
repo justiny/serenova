@@ -1,0 +1,80 @@
+.featured-cards {
+
+  h2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $fill-dark-90;
+  }
+
+  &-header {
+    max-width: pxem(840);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-wrapper {
+    @include col(6);
+    padding: 0 pxem(20);
+
+    @include mq($from: $breakpoint-small) {
+      padding: 0 pxem(20);
+      flex-basis: auto;
+      max-width: 75%;
+      width: 75%;
+    }
+
+    @include mq($from: 992px) {
+      @include col(2);
+      padding: 0 pxem(20);
+    }
+
+    &-half {
+      @include col(6);
+      padding: 0 pxem(20);
+
+      @include mq($from: $breakpoint-small) {
+        padding: 0 pxem(20);
+        flex-basis: auto;
+        max-width: 75%;
+        width: 75%;
+      }
+
+      @include mq($from: 992px) {
+        @include col(3);
+        padding: 0 pxem(20);
+      }
+    }
+  }
+
+  &-item {
+
+    &-inner {
+      box-shadow: $card-shadow;
+      height: 100%;
+
+      &-image {
+        width: 100%;
+        padding-top: 35%;
+        background-size: cover;
+        background-position: center center;
+
+        @include mq($from: $breakpoint-small) {
+          padding-top: 25%;
+        }
+
+        @include mq($from: 992px) {
+          padding-top: 69%;
+        }
+      }
+    }
+  }
+
+  &-link-bottom {
+    margin-top: auto;
+  }
+}

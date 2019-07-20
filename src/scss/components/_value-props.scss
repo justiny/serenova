@@ -1,0 +1,142 @@
+.es-value-props {
+
+  &-prop {
+
+    img {
+      z-index: 2;
+      width: pxem(80);
+      height: pxem(80);
+      position: relative;
+
+      @include mq($from: $breakpoint-small) {
+        margin-top: pxem(40);
+      }
+    }
+
+    &-content {
+      flex-basis: 100%;
+
+      @include mq($from: $breakpoint-small) {
+        flex-basis: 78%;
+      }
+    }
+
+    &-content.-content-full {
+      flex-basis: 100%;
+    }
+
+    &-inner-small {
+
+      .img-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        flex-basis: 100%;
+        height: auto;
+
+        @include mq($from: $breakpoint-small) {
+          flex-basis: 22%;
+        }
+
+        @include mq($from: $breakpoint-medium) {
+          min-height: pxem(190);
+
+          &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            background-color: $fill-dark-85;
+          }
+        }
+      }
+    }
+
+    &-inner {
+
+      .img-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        flex-basis: 100%;
+        height: auto;
+
+        @include mq($from: $breakpoint-small) {
+          flex-basis: 22%;
+        }
+
+        @include mq($from: $breakpoint-medium) {
+          min-height: pxem(190);
+
+          &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: pxem(168);
+            height: pxem(168);
+            border-radius: 100%;
+            background-color: $fill-dark-85;
+          }
+        }
+      }
+
+      &-first {
+
+        .img-wrap {
+
+          @include mq($from: $breakpoint-medium) {
+
+            &:before {
+              top: pxem(-80);
+              right: pxem(-80);
+            }
+          }
+        }
+      }
+
+      &-second {
+
+        .img-wrap {
+
+          @include mq($from: $breakpoint-medium) {
+
+            &:before {
+              top: pxem(-80);
+              left: pxem(-80);
+            }
+          }
+        }
+      }
+
+      &-third {
+
+        .img-wrap {
+
+          @include mq($from: $breakpoint-medium) {
+
+            &:before {
+              top: pxem(-80);
+              left: pxem(-80);
+            }
+          }
+        }
+      }
+
+      &-fourth {
+
+        .img-wrap {
+
+          @include mq($from: $breakpoint-medium) {
+
+            &:before {
+              top: pxem(-80);
+              right: pxem(-80);
+            }
+          }
+        }
+      }
+    }
+  }
+}

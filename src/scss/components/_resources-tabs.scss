@@ -1,0 +1,28 @@
+.es-resources-tabs {
+
+  &-pill {
+    border-radius: pxem(25);
+    transition: background-color 240ms $t-1;
+
+    &:hover,
+    &:focus,
+    &.-active {
+      background-color: $fill-blue;
+    }
+  }
+
+  ul {
+    justify-content: start;
+
+    @include mq($from: $breakpoint-medium) {
+      justify-content: center;
+    }
+  }
+}
+
+.es-search-item {
+
+  h3 {
+    margin-top: pxem(20);
+  }
+}

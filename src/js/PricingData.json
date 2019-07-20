@@ -1,0 +1,742 @@
+{
+  "info": {
+    "essential": [
+      "Inbound Voice",
+      "Outbound Voice",
+      "Unlimited Sub-Tenants &amp; Roles",
+      "Standard IVR",
+      "Standard Reports",
+      "Skills-Based Routing",
+      "Configuration &amp; Administrative APIs",
+      "50GB Media Storage Per Tenant &ast;",
+      "Standard Support"
+    ],
+    "pro": [
+      "All Essential Features",
+      "Custom Reports &amp; Statistics",
+      "Real-Time Reporting API",
+      "Historical Reporting API",
+      "Silent Monitoring & Barge-In",
+      "Queue Call Back",
+      "Basic Scripting"
+    ],
+    "ultimate": [
+      "All Pro Features",
+      "Email Channel Functionality",
+      "Chat Channel Functionality",
+      "SMS Channel Functionality",
+      "3rd-Party Work Items",
+      "Facebook Messenger Chat Integration",
+      "Real-Time Adherence API"
+    ]
+  },
+  "pricing": {
+    "named": {
+      "USD": {
+        "essential": {
+          "name": "essential",
+          "price": 59,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "10 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "10"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "3"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "2.50"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "2.50"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5"
+            }
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "price": 99,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "10 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "10"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5"
+            }
+          ]
+        },
+        "ultimate": {
+          "name": "Ultimate",
+          "price": 129,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "10"
+            }
+          ]
+        },
+        "symbol": "\u0024"
+      },
+      "AUD": {
+        "essential": {
+          "price": 79,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "13.50 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "13.50"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "13.50"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "4"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "3.50"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "3.50"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7"
+            }
+          ]
+        },
+        "pro": {
+          "price": 132,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "13.50 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "13.50"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "13.50"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 172,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "13.50"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "13.50"
+            }
+          ]
+        },
+        "symbol": "\u0024"
+      },
+      "NZD": {
+        "essential": {
+          "price": 83,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "14 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "14"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "14"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "4.50"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "3.50"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "3.50"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7"
+            }
+          ]
+        },
+        "pro": {
+          "price": 139,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "14 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "14"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "14"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 181,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "14"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "14"
+            }
+          ]
+        },
+        "symbol": "\u0024"
+      },
+      "EUR": {
+        "essential": {
+          "price": 56,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "10 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "10"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "3"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "2.50"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "2.50"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5"
+            }
+          ]
+        },
+        "pro": {
+          "price": 94,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "10 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "10"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 122,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "10"
+            }
+          ]
+        },
+        "symbol": "\u20ac"
+      },
+      "GBP": {
+        "essential": {
+          "price": 43,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "7.50 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "7.50"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "2.50"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "2"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "2"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "4"
+            }
+          ]
+        },
+        "pro": {
+          "price": 71,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "7.50 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "7.50"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "4"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 93,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "7.50"
+            }
+          ]
+        },
+        "symbol": "\u00a3"
+      }
+    },
+    "concurrent": {
+      "USD": {
+        "essential": {
+          "price": 71,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "12 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "12"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "3.50"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "3"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "3"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5 / named"
+            }
+          ]
+        },
+        "pro": {
+          "price": 119,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "12 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "12"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5 / named"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 155,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "12"
+            }
+          ]
+        },
+        "symbol": "\u0024"
+      },
+      "AUD": {
+        "essential": {
+          "price": 95,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "16 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "13.50 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "16"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "5"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "4"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "4"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7 / named"
+            }
+          ]
+        },
+        "pro": {
+          "price": 158,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "16 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "13.50 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "16"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7 / named"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 206,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "13.50 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "16"
+            }
+          ]
+        },
+        "symbol": "\u0024"
+      },
+      "NZD": {
+        "essential": {
+          "price": 100,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "17 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "$14 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "17"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "5"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "4"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "4"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7 / named"
+            }
+          ]
+        },
+        "pro": {
+          "price": 167,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "17 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "14 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "17"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "7 / named"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 217,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "14 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "17"
+            }
+          ]
+        },
+        "symbol": "\u0024"
+      },
+      "EUR": {
+        "essential": {
+          "price": 67,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "12 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "12"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "3.5"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "3"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "3"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5 / named"
+            }
+          ]
+        },
+        "pro": {
+          "price": 112,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "12 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "12"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "5 / named"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 146,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "10 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "12"
+            }
+          ]
+        },
+        "symbol": "\u20ac"
+      },
+      "GBP": {
+        "essential": {
+          "price": 51,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "9 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "8 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "9"
+            },
+            {
+              "feature": "Basic Scripting",
+              "cost": "3"
+            },
+            {
+              "feature": "Silent Monitoring & Barge-In",
+              "cost": "2.50"
+            },
+            {
+              "feature": "Queue Callback",
+              "cost": "2.50"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "4 / named"
+            }
+          ]
+        },
+        "pro": {
+          "price": 86,
+          "additional": [
+            {
+              "feature": "Additional Channels",
+              "cost": "9 per channel"
+            },
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "8 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "9"
+            },
+            {
+              "feature": "Real-Time Adherence API",
+              "cost": "4 / named"
+            }
+          ]
+        },
+        "ultimate": {
+          "price": 112,
+          "additional": [
+            {
+              "feature": "Twilio Call Recording",
+              "cost": "8 / named"
+            },
+            {
+              "feature": "CRM Integration",
+              "cost": "9"
+            }
+          ]
+        },
+        "symbol": "\u00a3"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+/* Negative CAPTCHA to disable submits by bots */
+	
+	.formNegCap
+		{
+		display:			none;
+		}

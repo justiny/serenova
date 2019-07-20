@@ -1,0 +1,28 @@
+.spacer {
+
+  &-before {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: pxem(-60);
+      width: 100%;
+      height: pxem(60);
+      background-color: $fill-white;
+    }
+  }
+
+  &-after {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: pxem(-60);
+      width: 100%;
+      height: pxem(60);
+      background-color: $fill-white;
+    }
+  }
+}

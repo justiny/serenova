@@ -1,0 +1,25 @@
+.es-simple-header {
+  background-image: url("../images/header-graphic-left@2x.png");
+  background-repeat: no-repeat;
+  background-size: 330px 100%;
+  background-position: -330px 0;
+  transition: background-position 240ms $t-1;
+
+  @include mq($from: $breakpoint-small) {
+    background-position: -100px 0;
+    transition: background-position 240ms $t-1;
+  }
+
+  @include mq($from: $breakpoint-medium) {
+    background-position: 0 0;
+    transition: background-position 240ms $t-1;
+  }
+
+  .link-blue {
+    width: auto;
+
+    @include mq($to: 992px) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.logo-blocks {
+
+  &-item {
+    border-bottom: pxem(1) solid $fill-white;
+
+    img {
+      align-self: center;
+      width: 100%;
+    }
+
+    width: 50%;
+    border-right: pxem(1) solid $fill-white;
+
+    &:nth-child(2n) {
+      border-right: none;
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      width: 33.33333%;
+      border-right: pxem(1) solid $fill-white;
+
+      &:nth-child(2n) {
+        border-right: pxem(1) solid $fill-white;
+      }
+
+      &:nth-child(3n) {
+        border-right: none;
+      }
+    }
+
+    @include mq($from: $breakpoint-large) {
+      width: 16.665%;
+
+      &:nth-child(3n) {
+        border-right: pxem(1) solid $fill-white;
+      }
+
+      &:nth-child(6n) {
+        border-right: none;
+      }
+    }
+  }
+}

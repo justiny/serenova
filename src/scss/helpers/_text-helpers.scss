@@ -1,0 +1,53 @@
+@mixin paragraph-text-underline($bg-color, $size, $hover-color: $bg-color) {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: $size+px;
+    background-color: $bg-color;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: background-color 240ms $t-1;
+  }
+
+  &:hover {
+
+    &:after {
+      background-color: $hover-color;
+      transition: background-color 240ms $t-1;
+    }
+  }
+}
+
+@mixin footer-text-underline($bg-color, $size) {
+
+  display: inline;
+  text-shadow: 1px 1px $fill-blue-green, -1px 1px $fill-blue-green, -1px -1px $fill-blue-green, 1px -1px $fill-blue-green;
+  background-image: linear-gradient(90deg, $bg-color 100%, transparent 100%);
+  background-position: 0 95%;
+  background-repeat: no-repeat;
+  background-size: 100% $size+px;
+
+  /* stylelint-disable */
+  &::-moz-selection {
+    background-color: $bg-color;
+    opacity: 0.3;
+    text-shadow: none;
+  }
+
+  &::selection {
+    background-color: $bg-color;
+    opacity: 0.3;
+    text-shadow: none;
+  }
+  /* stylelint-enable */
+}
+
+.venoframe {
+  background: none !important;
+}

@@ -1,0 +1,68 @@
+@import url("https://use.typekit.net/gtk8far.css");
+
+@mixin gotham-medium {
+  font-family: "Gotham SSm A", "Gotham SSm B", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@mixin gotham-bold {
+  font-family: "Gotham SSm A", "Gotham SSm B", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@mixin caecilia {
+  font-family: "caecilia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@mixin caecilia-italic {
+  font-family: "caecilia", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@mixin caecilia-bold {
+  font-family: "caecilia", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@mixin caecilia-bold-italic {
+  font-family: "caecilia", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@mixin akkurat {
+  font-family: "LL Akkurat Regular Web", serif;
+  font-style: normal;
+  font-display: fallback;
+  font-display: swap;
+}
+
+@mixin akkurat-italic {
+  font-family: "LL Akkurat Italic Web", serif;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin akkurat-bold {
+  font-family: "LL Akkurat Bold Web", serif;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin akkurat-bold-italic {
+  font-family: "LL Akkurat Bold Italic Web", serif;
+  font-style: normal;
+  font-display: swap;
+}

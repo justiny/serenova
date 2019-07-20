@@ -1,0 +1,33 @@
+.es-bio {
+
+  &-item {
+
+    hr {
+      border-top: 1px solid $fill-dark-90;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-image,
+  &-content {
+    flex-basis: 100%;
+  }
+
+  &-image {
+
+    @include mq($from: $breakpoint-small) {
+      flex-basis: 23%;
+      margin-right: 4%;
+    }
+  }
+
+  &-text {
+
+    @include mq($from: $breakpoint-small) {
+      flex-basis: 73%;
+    }
+  }
+}

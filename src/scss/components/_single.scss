@@ -1,0 +1,90 @@
+.serenovaBlogContent {
+
+  .sub-title {
+    text-transform: none;
+    font-weight: normal;
+    font-size: 20px;
+    @include font-smoothing;
+    @include akkurat;
+  }
+
+  .social-links {
+    padding: 0;
+
+    .social-link {
+
+      margin-right: pxem(20);
+
+      &:after {
+        background-size: cover;
+        content: "";
+        display: block;
+        float: left;
+        height: pxem(29);
+        margin-right: pxem(5);
+        width: pxem(29);
+      }
+
+      &-twitter:after {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='29px' height='29px' viewBox='0 0 29 29' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EGroup 3%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3Cpolygon id='path-1' points='0 0.0004 28.6746 0.0004 28.6746 28.6754 0 28.6754'%3E%3C/polygon%3E%3C/defs%3E%3Cg id='New-Elements-—-Feb-2019' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='social-share' transform='translate(-759.000000, -660.000000)'%3E%3Cg id='Group-3' transform='translate(759.000000, 660.000000)'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'%3E%3C/use%3E%3C/mask%3E%3Cg id='Clip-2'%3E%3C/g%3E%3Cpath d='M20.9366,11.7364 C20.9426,11.8694 20.9446,12.0024 20.9446,12.1364 C20.9446,16.2304 17.8296,20.9514 12.1316,20.9514 C10.3816,20.9514 8.7546,20.4394 7.3836,19.5584 C7.6256,19.5884 7.8726,19.6014 8.1226,19.6014 C9.5736,19.6014 10.9096,19.1074 11.9696,18.2754 C10.6146,18.2524 9.4696,17.3554 9.0756,16.1254 C9.2646,16.1624 9.4596,16.1814 9.6596,16.1814 C9.9406,16.1814 10.2136,16.1424 10.4756,16.0724 C9.0576,15.7874 7.9896,14.5354 7.9896,13.0354 L7.9896,12.9964 C8.4076,13.2264 8.8856,13.3674 9.3936,13.3824 C8.5616,12.8264 8.0146,11.8794 8.0146,10.8044 C8.0146,10.2364 8.1666,9.7054 8.4346,9.2464 C9.9616,11.1214 12.2456,12.3534 14.8196,12.4844 C14.7666,12.2574 14.7396,12.0194 14.7396,11.7774 C14.7396,10.0664 16.1256,8.6794 17.8366,8.6794 C18.7276,8.6794 19.5326,9.0564 20.0966,9.6584 C20.8036,9.5194 21.4656,9.2614 22.0656,8.9064 C21.8326,9.6294 21.3426,10.2364 20.7026,10.6194 C21.3296,10.5474 21.9266,10.3794 22.4816,10.1324 C22.0656,10.7544 21.5416,11.2994 20.9366,11.7364 M14.3366,0.0004 C6.4186,0.0004 -0.0004,6.4204 -0.0004,14.3384 C-0.0004,22.2564 6.4186,28.6754 14.3366,28.6754 C21.5576,28.6754 27.5286,23.3384 28.5266,16.3944 C28.6226,15.9224 28.6666,15.4334 28.6596,14.9294 C28.6686,14.7344 28.6746,14.5374 28.6746,14.3384 C28.6746,6.4204 22.2566,0.0004 14.3366,0.0004' id='Fill-1' fill='%23112456' mask='url(%23mask-2)'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      &-facebook:after {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='29px' height='29px' viewBox='0 0 29 29' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EGroup 3%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3Cpolygon id='path-1' points='0.0003 0 28.273 0 28.273 28.2739 0.0003 28.2739'%3E%3C/polygon%3E%3C/defs%3E%3Cg id='New-Elements-—-Feb-2019' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='social-share' transform='translate(-540.000000, -660.000000)'%3E%3Cg id='Group-3' transform='translate(540.000000, 660.000000)'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'%3E%3C/use%3E%3C/mask%3E%3Cg id='Clip-2'%3E%3C/g%3E%3Cpath d='M18.2383,8.3799 L16.2543,8.3799 C15.8613,8.3799 15.4643,8.7909 15.4643,9.0959 L15.4643,11.1359 L18.2333,11.1359 C18.1223,12.6999 17.8943,14.1309 17.8943,14.1309 L15.4503,14.1309 L15.4503,22.9979 L11.8073,22.9979 L11.8073,14.1309 L10.0353,14.1309 L10.0353,11.1469 L11.8073,11.1469 L11.8073,8.7069 C11.8073,8.2599 11.7173,5.2739 15.5403,5.2739 L18.2383,5.2739 L18.2383,8.3799 Z M14.1353,-0.0001 C6.3293,-0.0001 0.0003,6.3299 0.0003,14.1359 C0.0003,21.9439 6.3293,28.2739 14.1353,28.2739 C21.9453,28.2739 28.2733,21.9439 28.2733,14.1359 C28.2733,6.3299 21.9453,-0.0001 14.1353,-0.0001 Z' id='Fill-1' fill='%23112456' mask='url(%23mask-2)'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      &-linkedin:after {
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='29px' height='29px' viewBox='0 0 29 29' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3EGroup 10%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3Cpolygon id='path-1' points='0 0.425 28.5759 0.425 28.5759 28.9999 0 28.9999'%3E%3C/polygon%3E%3C/defs%3E%3Cg id='New-Elements-—-Feb-2019' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='social-share' transform='translate(-973.000000, -660.000000)'%3E%3Cg id='Group-10' transform='translate(973.000000, 659.000000)'%3E%3Cpolygon id='Fill-1' fill='%23112456' points='9.611 19.8462 11.642 19.8462 11.642 13.7382 9.611 13.7382'%3E%3C/polygon%3E%3Cg id='Group-9' transform='translate(0.000000, 0.575200)'%3E%3Cpath d='M10.6407,10.2202 C9.9457,10.2202 9.4927,10.6772 9.4927,11.2752 C9.4927,11.8622 9.9337,12.3302 10.6137,12.3302 L10.6267,12.3302 C11.3357,12.3302 11.7757,11.8622 11.7757,11.2752 C11.7617,10.6772 11.3357,10.2202 10.6407,10.2202' id='Fill-2' fill='%23112456'%3E%3C/path%3E%3Cpath d='M16.625,13.021 C15.545,13.021 15.063,13.616 14.795,14.033 L14.795,14.05 L14.783,14.05 C14.785,14.045 14.791,14.039 14.795,14.033 L14.795,13.165 L12.766,13.165 C12.791,13.738 12.766,19.271 12.766,19.271 L14.795,19.271 L14.795,15.861 C14.795,15.679 14.807,15.498 14.863,15.366 C15.01,15 15.344,14.624 15.904,14.624 C16.639,14.624 16.932,15.183 16.932,16.004 L16.932,19.271 L18.963,19.271 L18.963,15.771 C18.963,13.894 17.961,13.021 16.625,13.021' id='Fill-4' fill='%23112456'%3E%3C/path%3E%3Cg id='Group-8'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'%3E%3C/use%3E%3C/mask%3E%3Cg id='Clip-7'%3E%3C/g%3E%3Cpath d='M21.0079,20.5059 C21.0079,21.0409 20.5629,21.4749 20.0159,21.4749 L8.5629,21.4749 C8.0119,21.4749 7.5689,21.0409 7.5689,20.5059 L7.5689,8.9199 C7.5689,8.3839 8.0119,7.9509 8.5629,7.9509 L20.0159,7.9509 C20.5629,7.9509 21.0079,8.3839 21.0079,8.9199 L21.0079,20.5059 Z M14.2889,0.4249 C6.3969,0.4249 -0.0001,6.8209 -0.0001,14.7129 C-0.0001,22.6039 6.3969,28.9999 14.2889,28.9999 C22.1799,28.9999 28.5759,22.6039 28.5759,14.7129 C28.5759,6.8209 22.1799,0.4249 14.2889,0.4249 Z' id='Fill-6' fill='%23112456' mask='url(%23mask-2)'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-divider {
+    margin-top: pxem(40);
+    margin-bottom: pxem(40);
+    border: 0;
+
+    &.-top {
+      height: 10px;
+      background: #2DC2EC;
+    }
+
+    &.-bottom {
+      height: 2px;
+      background: #D8D8D8;
+    }
+  }
+
+  &-author {
+
+    &-image {
+      @include col(6);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(2);
+      }
+    }
+
+    &-content {
+      @include col(6);
+
+      @include mq($from: $breakpoint-small) {
+        @include col(4);
+      }
+    }
+
+    img {
+      border-radius: 100%;
+      max-width: 149px;
+      align-self: center;
+    }
+  }
+}
+
+.at4-share-title {
+  display: none;
+}

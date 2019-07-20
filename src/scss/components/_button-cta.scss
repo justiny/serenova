@@ -1,0 +1,46 @@
+.es-button-cta {
+
+  .es-grid {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: $fill-blue-dark;
+
+    @include mq($from: $breakpoint-small) {
+      margin-right: auto;
+      margin-left: auto;
+      background-color: inherit;
+    }
+  }
+
+  &-inner {
+
+    &:before {
+      content: "";
+      right: 95%;
+      height: 100%;
+      width: 1000px;
+      position: absolute;
+      background-color: $fill-blue-dark;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    width: pxem(180);
+    height: auto;
+    top: 0;
+    left: pxem(-15);
+
+    @include mq($from: $breakpoint-small) {
+      left: pxem(-75);
+    }
+  }
+
+  &-button {
+    width: 100%;
+
+    @include mq($from: $breakpoint-small) {
+      width: auto;
+    }
+  }
+}

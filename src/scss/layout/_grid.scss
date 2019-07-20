@@ -1,0 +1,230 @@
+$container-max-width: pxem(1200);
+$body-max-width: pxem(1600);
+$footer-max-width: pxem(1120);
+$columns: 6;
+$gutter-width: 2.5rem;
+$gutter-width-mobile: 1.25rem;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 1025px,
+  lg: 1200px,
+  xl: 1440px
+);
+$gutter-breakpoints: (
+  xs: $gutter-width-mobile * 0.5,
+  sm: $gutter-width * 0.5,
+  md: $gutter-width * 0.5
+);
+$gutter-compensations: (
+  xs: $gutter-width-mobile * 0.5 * -1,
+  sm: $gutter-width * 0.5 * -1
+);
+
+// map functions
+@function breakpoint($breakpoint) {
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    @return map-get($grid-breakpoints, $breakpoint);
+  } @else {
+    @warn "breakpoint: could not find #{$breakpoint} in $grid-breakpoints map. Please make sure it is defined";
+  }
+}
+
+@function gutter($breakpoint) {
+  @if map-has-key($gutter-breakpoints, $breakpoint) {
+    @return map-get($gutter-breakpoints, $breakpoint);
+  } @else {
+    @warn "gutter: could not find #{$breakpoint} in $gutter-breakpoints map. Please make sure it is defined";
+  }
+}
+
+@function gutter-compensation($breakpoint) {
+  @if map-has-key($gutter-compensations, $breakpoint) {
+    @return map-get($gutter-compensations, $breakpoint);
+  } @else {
+    @warn "grid-gutter: could not find #{$breakpoint} in $grid-breakpoints map. Please make sure it is defined";
+  }
+}
+
+@mixin col($col-num) {
+  flex-basis: (100% * $col-num / $columns);
+  max-width: (100% * $col-num / $columns);
+}
+
+.es-main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: $body-max-width;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.es-footer {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: pxem(680);
+  width: 100%;
+
+  @include mq($from: $breakpoint-medium) {
+    max-width: pxem(1120);
+  }
+}
+
+.es-grid {
+  padding-left: gutter("xs");
+  padding-right: gutter("xs");
+  max-width: $container-max-width;
+  margin-left: pxem(10);
+  margin-right: pxem(10);
+
+  @include mq($from: breakpoint("sm")) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: gutter("sm");
+    padding-right: gutter("sm");
+  }
+
+  @include mq($from: breakpoint("md")) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: gutter("md");
+    padding-right: gutter("md");
+  }
+}
+
+.es-row {
+  box-sizing: border-box;
+  min-height: 1px;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: gutter-compensation("xs");
+  margin-right: gutter-compensation("xs");
+
+  @include mq($from: breakpoint("sm")) {
+    margin-left: gutter-compensation("sm");
+    margin-right: gutter-compensation("sm");
+  }
+}
+
+.es-row-column {
+  box-sizing: border-box;
+  min-height: 1px;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: gutter-compensation("xs");
+  margin-right: gutter-compensation("xs");
+
+  @include mq($from: breakpoint("sm")) {
+    margin-left: gutter-compensation("sm");
+    margin-right: gutter-compensation("sm");
+  }
+}
+
+// Spans ( Columns with 1px padding )
+
+[class*="es-span-"] {
+  position: relative;
+  min-height: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: breakpoint($breakpoint)) {
+    @for $i from 1 through $columns {
+
+      .es-span-#{$breakpoint}-#{$i} {
+        width: (100% / $columns * $i);
+        max-width: (100% / $columns * $i);
+      }
+    }
+  }
+}
+
+// Columns
+
+[class*="es-col-"] {
+  position: relative;
+  min-height: 1px;
+  padding-left: gutter("xs");
+  padding-right: gutter("xs");
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  @media (min-width: breakpoint("sm")) {
+    padding-left: gutter("sm");
+    padding-right: gutter("sm");
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: breakpoint($breakpoint)) {
+    @for $i from 1 through $columns {
+
+      .es-col-#{$breakpoint}-#{$i} {
+        width: (100% / $columns * $i);
+        max-width: (100% / $columns * $i);
+      }
+    }
+  }
+}
+
+// Offsets
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: breakpoint($breakpoint)) {
+    @for $i from 1 through $columns {
+
+      .es-offset-#{$breakpoint}-#{$i} {
+        margin-left: (100% / $columns * $i);
+      }
+    }
+  }
+}
+
+// Hides
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: breakpoint($breakpoint)) {
+
+    .es-hidden-#{$breakpoint} {
+      display: none;
+    }
+  }
+}
+
+// Shows Flex
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: breakpoint($breakpoint)) {
+
+    .es-show-#{$breakpoint}-flex {
+      display: flex;
+    }
+  }
+}
+
+// Shows block
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @media (min-width: breakpoint($breakpoint)) {
+
+    .es-show-#{$breakpoint} {
+      display: block;
+    }
+  }
+}

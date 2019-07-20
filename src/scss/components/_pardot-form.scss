@@ -1,0 +1,107 @@
+/* stylelint-disable */
+#pardot-form.es-styled-form {
+  width: 98%;
+  margin: 10px auto;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#pardot-form.es-styled-form p.form-field label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.375;
+  margin-bottom: 10px;
+  color: #463f3f;
+}
+
+#pardot-form.es-styled-form [type="color"],
+#pardot-form.es-styled-form [type="date"],
+#pardot-form.es-styled-form [type="datetime-local"],
+#pardot-form.es-styled-form [type="datetime"],
+#pardot-form.es-styled-form [type="email"],
+#pardot-form.es-styled-form [type="month"],
+#pardot-form.es-styled-form [type="number"],
+#pardot-form.es-styled-form [type="password"],
+#pardot-form.es-styled-form [type="search"],
+#pardot-form.es-styled-form [type="tel"],
+#pardot-form.es-styled-form [type="text"],
+#pardot-form.es-styled-form [type="time"],
+#pardot-form.es-styled-form [type="url"],
+#pardot-form.es-styled-form [type="week"],
+#pardot-form.es-styled-form textarea,
+#pardot-form.es-styled-form select {
+  font-weight: 400;
+  border: 1px solid #5f6065;
+  border-radius: 3px;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.2;
+  min-height: 48px;
+  color: #463f3f;
+}
+
+#pardot-form.es-styled-form select {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzVmNjA2NSIgZD0iTTAgMGgzMkwxNiAyNHoiLz48L3N2Zz4=);
+  background-size: 9px 6px;
+  background-position: 100%;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
+
+#pardot-form.es-styled-form [type="color"]:focus,
+#pardot-form.es-styled-form [type="date"]:focus,
+#pardot-form.es-styled-form [type="datetime-local"]:focus,
+#pardot-form.es-styled-form [type="datetime"]:focus,
+#pardot-form.es-styled-form [type="email"]:focus,
+#pardot-form.es-styled-form [type="month"]:focus,
+#pardot-form.es-styled-form [type="number"]:focus,
+#pardot-form.es-styled-form [type="password"]:focus,
+#pardot-form.es-styled-form [type="search"]:focus,
+#pardot-form.es-styled-form [type="tel"]:focus,
+#pardot-form.es-styled-form [type="text"]:focus,
+#pardot-form.es-styled-form [type="time"]:focus,
+#pardot-form.es-styled-form [type="url"]:focus,
+#pardot-form.es-styled-form [type="week"]:focus,
+#pardot-form.es-styled-form textarea:focus,
+#pardot-form.es-styled-form select:focus {
+  border: 1px solid #2dc2ec;
+  -webkit-box-shadow: 0 0 3px #2dc2ec;
+  box-shadow: 0 0 3px #2dc2ec;
+}
+
+#pardot-form.es-styled-form p.submit {
+  margin: .5em auto;
+}
+
+#pardot-form.es-styled-form p.submit input {
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-image: none;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+  background-color: #2dc2ec;
+  color: #fff;
+  border-color: #2dc2ec;
+  transition: background-color .24s cubic-bezier(.2,.3,.25,.9);
+  padding: 1.125rem 1.5625rem;
+  font-size: 15px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.15);
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+}
+
+#pardot-form.es-styled-form p.submit input:hover {
+  background-color: #1196bc;
+}
+/* stylelint-enable */

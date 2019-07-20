@@ -1,0 +1,15 @@
+.es-footer {
+
+  &-col {
+    width: 100%;
+
+    @include mq($from: $breakpoint-small) {
+      width: 50%;
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      width: 25%;
+
+    }
+  }
+}

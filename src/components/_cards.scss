@@ -1,0 +1,9 @@
+.es-cards {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+
+  &-item {
+    @include col(2);
+  }
+}

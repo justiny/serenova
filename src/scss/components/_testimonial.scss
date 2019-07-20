@@ -1,0 +1,35 @@
+.es-testimonial {
+
+  &-avatar {
+    text-align: left;
+
+    @include mq($from: $breakpoint-small) {
+      text-align: right;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &-quote {
+    position: relative;
+
+    .open-quote {
+      position: absolute;
+      top: pxem(-41);
+      left: pxem(-10);
+      @include caecilia-bold-italic;
+      font-size: pxem(120);
+      color: rgba($text-blue-dark, 0.2);
+    }
+
+    .close-quote {
+      position: absolute;
+      margin-left: pxem(-26);
+      @include caecilia-bold-italic;
+      font-size: pxem(120);
+      color: rgba($text-blue-dark, 0.2);
+    }
+  }
+}

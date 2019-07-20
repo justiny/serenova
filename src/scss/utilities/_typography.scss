@@ -1,0 +1,528 @@
+// Typography base text & title classes
+// ------------------------------------
+
+.title {
+
+  &-1 {
+    @include font-smoothing;
+    @include caecilia;
+    $map: (
+      576px: 30px,
+      768px: 38px
+    );
+    line-height: 1.26;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-2 {
+    @include font-smoothing;
+    @include caecilia-bold;
+    $map: (
+      576px: 18px,
+      768px: 20px
+    );
+    line-height: 1;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-3 {
+    @include font-smoothing;
+    @include gotham-bold;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  &-4 {
+    @include font-smoothing;
+    @include caecilia;
+    $map: (
+      576px: 38px,
+      768px: 48px
+    );
+    line-height: 1.26;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-cap {
+
+    &:before {
+      display: block;
+      content: "";
+      left: 0;
+      width: pxem(70);
+      height: pxem(5);
+      margin-bottom: pxem(25);
+      background-color: $fill-blue;
+    }
+  }
+}
+
+.text {
+
+  &-38-bold {
+    @include font-smoothing;
+    @include caecilia-bold;
+    $map: (
+      576px: 30px,
+      768px: 38px
+    );
+    line-height: 1.26;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-38-italic {
+    @include font-smoothing;
+    @include caecilia-italic;
+    $map: (
+      576px: 30px,
+      768px: 38px
+    );
+    line-height: 1.26;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-20 {
+    @include font-smoothing;
+    @include akkurat;
+    $map: (
+      576px: 18px,
+      768px: 20px
+    );
+    line-height: 1.4;
+    @include poly-fluid-sizing("font-size", $map);
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      @include paragraph-text-underline(rgba($fill-blue-pale, 0.5), 8, rgba($fill-blue, 0.5));
+    }
+
+    ul,
+    ol {
+      padding-left: pxem(20);
+      margin: 0 0 pxem(20) 0;
+    }
+
+    p {
+
+      + p,
+      + ol,
+      + ul {
+        margin-top: pxem(20);
+      }
+    }
+  }
+
+  &-20-italic {
+    @include font-smoothing;
+    @include caecilia-italic;
+    $map: (
+      576px: 18px,
+      768px: 20px
+    );
+    line-height: 1.4;
+    @include poly-fluid-sizing("font-size", $map);
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      @include paragraph-text-underline(rgba($fill-blue-pale, 0.5), 8, rgba($fill-blue, 0.5));
+    }
+  }
+
+  &-20-bold {
+    @include font-smoothing;
+    @include caecilia-bold;
+    $map: (
+      576px: 18px,
+      768px: 20px
+    );
+    line-height: 1.2;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &-16-bold {
+    @include font-smoothing;
+    @include gotham-bold;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.9px;
+  }
+
+  &-16-akk-bold {
+    @include font-smoothing;
+    @include akkurat-bold;
+    $map: (
+      576px: 15px,
+      768px: 16px
+    );
+    line-height: 1.5;
+  }
+
+  &-18-akk-bold {
+    @include font-smoothing;
+    @include akkurat-bold;
+    font-size: pxem(18);
+    line-height: pxem(28);
+  }
+
+  &-16 {
+    @include font-smoothing;
+    @include akkurat;
+    $map: (
+      576px: 15px,
+      768px: 16px
+    );
+    line-height: 1.5;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      @include paragraph-text-underline(rgba($fill-blue-pale, 0.5), 8, rgba($fill-blue, 0.5));
+    }
+
+    ul,
+    ol {
+      padding-left: pxem(20);
+      margin: 0 0 pxem(20) 0;
+    }
+
+    p {
+
+      + p,
+      + ol,
+      + ul {
+        margin-top: pxem(20);
+      }
+    }
+  }
+
+  &-15-bold {
+    @include font-smoothing;
+    @include gotham-bold;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.9px;
+  }
+
+  &-15-medium {
+    @include font-smoothing;
+    @include gotham-medium;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.9px;
+  }
+
+  &-15-footer {
+    @include font-smoothing;
+    @include gotham-bold;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  &-14-regular {
+    @include font-smoothing;
+    @include akkurat;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  &-14-italic {
+    @include font-smoothing;
+    @include akkurat-italic;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  &-14-medium {
+    @include font-smoothing;
+    @include gotham-medium;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.93px;
+    text-transform: uppercase;
+  }
+
+  &-14-bold {
+    @include font-smoothing;
+    @include gotham-bold;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.93px;
+  }
+
+  &-13 {
+    @include font-smoothing;
+    @include akkurat;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  &-13-bold {
+    @include font-smoothing;
+    @include akkurat-bold;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  &-13-medium {
+    @include font-smoothing;
+    @include gotham-medium;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.93px;
+    text-transform: uppercase;
+  }
+}
+
+// Link Styles
+// -------------------------
+
+.link {
+
+  &-lighten {
+    cursor: pointer;
+    transition: color 240ms $t-1;
+
+    // &:hover {
+    //   color: lighten(color)
+    // }
+  }
+
+  &-nav-top {
+    transition: color 240ms $t-1;
+
+    &:hover,
+    &:focus {
+      color: $text-blue;
+      transition: color 240ms $t-1;
+    }
+  }
+
+  &-nav {
+    transition: color 240ms $t-1;
+
+    &:hover,
+    &:focus {
+      color: $text-blue;
+      transition: color 240ms $t-1;
+    }
+
+    &.-active {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -12px;
+        width: 100%;
+        height: pxem(5);
+        background-color: rgba($fill-blue-pale, 0.5);
+      }
+    }
+  }
+
+  &-underline {
+    @include paragraph-text-underline(rgba($fill-blue-pale, 0.5), 8, rgba($fill-blue, 0.5));
+  }
+
+  &-footer {
+
+    &:hover {
+      @include footer-text-underline($text-dark-80, 1);
+    }
+  }
+
+  &-blue {
+    transition: color 240ms $t-1;
+    color: $text-blue;
+
+    &:hover,
+    &:focus {
+      color: darken($text-blue, 25%);
+      transition: color 240ms $t-1;
+    }
+  }
+
+  &-white {
+    transition: color 240ms $t-1;
+
+    &:hover,
+    &:focus {
+      color: darken($text-white, 25%);
+      transition: color 240ms $t-1;
+    }
+  }
+
+  &-arrow-blue {
+    cursor: pointer;
+    $bgColor: $svg-blue;
+
+    &:after {
+      margin-left: pxem(8);
+      content: "";
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Cpath fill='#{$bgColor}' fill-rule='evenodd' d='M1.4 0L0 1.4 4.6 6 0 10.6 1.4 12l6-6z'/%3E%3C/svg%3E ");
+      background-size: cover;
+      display: inline-block;
+      height: pxem(12);
+      width: pxem(7);
+      transition: margin-left 240ms $t-1;
+    }
+
+    &:hover {
+
+      &:after {
+        margin-left: pxem(14);
+        transition: margin-left 240ms $t-1;
+        $bgColor: $svg-blue-hover;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Cpath fill='#{$bgColor}' fill-rule='evenodd' d='M1.4 0L0 1.4 4.6 6 0 10.6 1.4 12l6-6z'/%3E%3C/svg%3E ");
+      }
+    }
+
+    @include mq($to: $breakpoint-small) {
+
+      &:hover {
+
+        &:after {
+          margin-left: pxem(8);
+        }
+      }
+    }
+
+    &-no-animate {
+      transition: none;
+
+      &:hover {
+
+        &:after {
+          margin-left: pxem(8);
+          transition: none;
+        }
+      }
+    }
+  }
+
+  &-arrow-dark {
+    cursor: pointer;
+    $bgColor: $svg-dark;
+
+    &:after {
+      margin-left: pxem(12);
+      content: "";
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Cpath fill='#{$bgColor}' fill-rule='evenodd' d='M1.4 0L0 1.4 4.6 6 0 10.6 1.4 12l6-6z'/%3E%3C/svg%3E ");
+      background-size: cover;
+      display: inline-block;
+      height: pxem(16);
+      width: pxem(10);
+      transition: margin-left 240ms $t-1;
+    }
+
+    &:hover {
+
+      &:after {
+        $bgColor: $svg-dark-hover;
+        margin-left: pxem(18);
+        transition: margin-left 240ms $t-1;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Cpath fill='#{$bgColor}' fill-rule='evenodd' d='M1.4 0L0 1.4 4.6 6 0 10.6 1.4 12l6-6z'/%3E%3C/svg%3E ");
+      }
+    }
+
+    @include mq($to: $breakpoint-small) {
+
+      &:hover {
+
+        &:after {
+          margin-left: pxem(12);
+        }
+      }
+    }
+
+    &-no-animate {
+      transition: none;
+
+      &:hover {
+
+        &:after {
+          margin-left: pxem(12);
+          transition: none;
+        }
+      }
+    }
+  }
+}
+
+// Typography Emphasis and Styling
+// -------------------------
+
+.regular,
+.normal {
+  font-weight: $regular;
+}
+
+.bold {
+  font-weight: $bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.decoration-underline {
+  text-decoration: underline;
+}
+
+.decoration-line-through {
+  text-decoration: line-through;
+}
+
+// Typography Alignment
+// -------------------------
+.text-center-left {
+  text-align: left;
+
+  @include mq($from: $breakpoint-small) {
+    text-align: center;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// List styles
+// -------------------------
+// Unstyled keeps list items block level,
+// just removes default browser padding and list-style
+
+.list-unstyled {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-flex {
+  display: flex;
+}
+
+.hr {
+  height: pxem(1);
+  width: 100%;
+  border: 0;
+}

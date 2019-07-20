@@ -1,0 +1,55 @@
+.es-image-header {
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include mq($from: $breakpoint-small) {
+    background-position: top right;
+  }
+
+  &-card {
+    width: 100%;
+
+    @include mq($from: $breakpoint-small) {
+      background-image: url("../images/header-mask@2x.png");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 35% 100%;
+      width: 80%;
+    }
+
+    @include mq($from: $breakpoint-medium) {
+      width: 65%;
+    }
+
+    &-inner {
+
+      .button {
+        margin-bottom: 20px;
+      }
+
+      @include mq($from: $breakpoint-small) {
+        margin-left: 30%;
+      }
+
+      @include mq($from: 1440px) {
+        margin-left: 35%;
+      }
+
+      @include mq($from: 1148px) {
+
+        .button {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-actions {
+      text-align: center;
+
+      @include mq($from: $breakpoint-small) {
+        text-align: left;
+      }
+    }
+  }
+}

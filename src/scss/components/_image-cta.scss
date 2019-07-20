@@ -1,0 +1,113 @@
+.es-image-cta {
+
+  &-image {
+    left: 0;
+    top: 0;
+
+    &-img {
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: pxem(794);
+    }
+
+    &-placeholder {
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      height: 100%;
+      width: pxem(794);
+      margin-left: pxem(75);
+    }
+
+    @include mq($to: 768px) {
+      display: none;
+    }
+  }
+
+  &-image.-is-right {
+    order: -1;
+
+    .es-image-cta-image-img {
+      right: 0;
+      top: 0;
+      background-position: top right;
+      margin-left: 0;
+
+      @include mq($from: $breakpoint-small) {
+        right: pxem(20);
+      }
+    }
+
+    .es-image-cta-image-placeholder {
+      right: 0;
+      top: 0;
+      background-position: top right;
+      margin-left: 0;
+      margin-right: pxem(5);
+      transform: scaleX(-1);
+    }
+
+    @include mq($from: $breakpoint-small) {
+      right: pxem(20);
+    }
+
+    @include mq($to: 730px) {
+      display: none;
+    }
+  }
+}
+
+.es-image-cta-featured {
+
+  &-image {
+    left: 0;
+    top: 0;
+
+    &-img {
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: auto;
+    }
+
+    &-placeholder {
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      height: 100%;
+      width: auto;
+      margin-left: pxem(75);
+    }
+  }
+
+  &-image.-is-right {
+    order: -1;
+
+    .es-image-cta-image-img {
+      right: 0;
+      top: 0;
+      background-position: top right;
+      margin-left: 0;
+
+      @include mq($from: $breakpoint-small) {
+        right: pxem(20);
+      }
+    }
+
+    .es-image-cta-image-placeholder {
+      right: 0;
+      top: 0;
+      background-position: top right;
+      margin-left: 0;
+      margin-right: pxem(5);
+      transform: scaleX(-1);
+    }
+
+    @include mq($from: $breakpoint-small) {
+      right: pxem(20);
+    }
+  }
+}

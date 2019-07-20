@@ -1,0 +1,112 @@
+.card-cta {
+
+  &-full {
+    order: 1;
+
+    @include mq($from: $breakpoint-small) {
+      order: 0;
+    }
+
+    &-inner {
+      box-shadow: $card-shadow;
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: pxem(-80);
+        left: pxem(-80);
+        width: pxem(168);
+        height: pxem(168);
+        border-radius: 100%;
+        background-color: $fill-dark-85;
+      }
+
+      img {
+        height: pxem(80);
+        width: pxem(80);
+        z-index: 2;
+
+        @include mq($from: $breakpoint-medium) {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &-half {
+    order: 0;
+
+    @include mq($from: $breakpoint-small) {
+      order: 1;
+    }
+  }
+
+  &-half-top {
+
+    &-inner {
+      box-shadow: $card-shadow;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: pxem(-80);
+        left: pxem(-80);
+        width: pxem(168);
+        height: pxem(168);
+        border-radius: 100%;
+        background-color: $fill-dark-85;
+      }
+
+      img {
+        height: pxem(80);
+        width: pxem(80);
+        z-index: 2;
+
+        @include mq($from: $breakpoint-medium) {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &-half-bottom {
+
+    &-inner {
+      box-shadow: $card-shadow;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: pxem(-80);
+        left: pxem(-80);
+        width: pxem(168);
+        height: pxem(168);
+        border-radius: 100%;
+        background-color: $fill-dark-85;
+      }
+
+      img {
+        height: pxem(80);
+        width: pxem(80);
+        z-index: 2;
+
+        @include mq($from: $breakpoint-medium) {
+          width: auto;
+        }
+      }
+    }
+  }
+}

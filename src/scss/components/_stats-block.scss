@@ -1,0 +1,15 @@
+.es-stats-block {
+
+
+  @include mq($from: $breakpoint-medium) {
+    background-position: top left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/stats-block-graphic@2x.png");
+    transition: background-position 100ms $t-1;
+  }
+
+  &-item {
+    width: 33.333%;
+  }
+}

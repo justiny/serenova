@@ -1,0 +1,100 @@
+.card-callout {
+
+  img {
+    z-index: 2;
+    width: pxem(80);
+    height: pxem(80);
+
+    @include mq($from: $breakpoint-medium) {
+      align-self: center;
+    }
+  }
+
+  &-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+
+    h3 {
+      $bgColor: $svg-dark;
+
+      &:after {
+        margin-left: pxem(12);
+        content: "";
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Cpath fill='#{$bgColor}' fill-rule='evenodd' d='M1.4 0L0 1.4 4.6 6 0 10.6 1.4 12l6-6z'/%3E%3C/svg%3E ");
+        background-size: cover;
+        display: inline-block;
+        height: pxem(16);
+        width: pxem(10);
+        transition: margin-left 240ms $t-1;
+      }
+
+      @include mq($to: $breakpoint-small) {
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-top,
+  &-bottom {
+
+    &-even,
+    &-odd {
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: pxem(-80);
+        width: pxem(168);
+        height: pxem(168);
+        border-radius: 100%;
+        background-color: $fill-dark-85;
+        transition: all 240ms $t-1;
+        z-index: 1;
+      }
+
+      &:hover {
+
+        &:before {
+          width: pxem(175);
+          height: pxem(175);
+        }
+      }
+    }
+  }
+
+  &-top {
+
+    &-even {
+      box-shadow: $card-shadow;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      &:before {
+        top: pxem(-80);
+      }
+    }
+  }
+
+  &-bottom {
+
+    &-odd {
+      box-shadow: $card-shadow;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      &:before {
+        bottom: pxem(-80);
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.es-announcement {
+
+  a {
+    transition: background-color 240ms $t-1;
+
+    &:hover {
+      background-color: $fill-blue;
+    }
+  }
+}

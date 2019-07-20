@@ -1,0 +1,207 @@
+.es-rich-text {
+
+  h1 {
+    color: $text-dark-30;
+    @include font-smoothing;
+    @include caecilia;
+    $map: (
+      576px: 30px,
+      768px: 38px
+    );
+    line-height: 1.26;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  h2 {
+    color: $text-dark-30;
+    @include font-smoothing;
+    @include caecilia-bold;
+    $map: (
+      576px: 18px,
+      768px: 20px
+    );
+    line-height: 1;
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  h3 {
+    @include font-smoothing;
+    @include gotham-bold;
+    text-transform: uppercase;
+    color: $text-dark-30;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  h4 {
+    @include font-smoothing;
+    @include gotham-bold;
+    text-transform: uppercase;
+    color: $text-dark-30;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  h5 {
+    @include font-smoothing;
+    @include gotham-bold;
+    text-transform: uppercase;
+    color: $text-dark-30;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  h6 {
+    @include font-smoothing;
+    @include gotham-bold;
+    text-transform: uppercase;
+    color: $text-dark-30;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul {
+    margin-bottom: pxem(20);
+  }
+
+  p {
+
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6,
+    + ul,
+    + ol {
+      padding-top: pxem(20);
+    }
+  }
+
+  p:last-of-type {
+    /* stylelint-disable-next-line */
+    margin-bottom: 0;
+  }
+
+  p,
+  ul,
+  ol {
+    @include font-smoothing;
+    @include akkurat;
+    $map: (
+      576px: 18px,
+      768px: 20px
+    );
+    line-height: 1.4;
+    color: $text-dark-30;
+    @include poly-fluid-sizing("font-size", $map);
+
+    a {
+      @include underline_simple;
+    }
+
+    strong {
+      font-style: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+  }
+
+  ul,
+  ol {
+    padding-left: pxem(20);
+  }
+
+  strong {
+    font-style: bold;
+  }
+
+  em {
+    font-style: italic;
+
+    a {
+      @include underline_simple;
+    }
+  }
+
+  .caption {
+    @include font-smoothing;
+    @include akkurat;
+    color: rgba($text-dark-30, 0.5);
+    font-size: pxem(13);
+    line-height: 1.4;
+
+    a {
+      @include underline_simple;
+    }
+  }
+
+  // Overrides for tables since no margins are needed
+  &-table {
+
+    td {
+      @include font-smoothing;
+      @include akkurat;
+      $map: (
+        576px: 15px,
+        768px: 16px
+      );
+      line-height: 1.5;
+      color: $text-dark-30;
+      @include poly-fluid-sizing("font-size", $map);
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ol,
+    ul {
+      margin-bottom: 0;
+    }
+
+    p {
+
+      + h1,
+      + h2,
+      + h3,
+      + h4,
+      + h5,
+      + h6 {
+        padding-top: 0;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include font-smoothing;
+      @include akkurat-bold;
+      $map: (
+        576px: 15px,
+        768px: 16px
+      );
+      line-height: 1;
+      color: $text-dark-30;
+      @include poly-fluid-sizing("font-size", $map);
+    }
+  }
+}

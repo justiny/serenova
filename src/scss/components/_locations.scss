@@ -1,0 +1,21 @@
+.es-locations {
+
+  &-item {
+
+    img {
+      height: auto;
+
+      @include mq($to: 500px) {
+        max-width: 100%;
+      }
+
+      @include mq($from: 500px, $to: $breakpoint-small) {
+        max-width: 50%;
+      }
+
+      @include mq($from: $breakpoint-small) {
+        max-width: pxem(240);
+      }
+    }
+  }
+}

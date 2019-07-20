@@ -1,0 +1,345 @@
+html,
+body {
+  overflow-x: hidden;
+  background-color: $fill-dark-90;
+
+  &.-nav-open {
+    overflow-y: hidden;
+    width: 100%;
+
+    @include mq($from: $breakpoint-medium) {
+      position: relative;
+    }
+  }
+}
+
+.es-nav {
+  box-shadow: $nav-shadow;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: pxem(1600);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  z-index: 500;
+  overflow-x: visible;
+
+  &.-collapse {
+    position: fixed;
+
+    @include mq($from: $breakpoint-small) {
+      padding-top: pxem(15);
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%) translateY(-60px);
+      animation: smoothScroll 800ms forwards;
+      @keyframes smoothScroll {
+
+        0% {
+          transform: translateY(-60px) translateX(-50%);
+        }
+
+        100% {
+          /* stylelint-disable-next-line */
+          transform: translateY(0px) translateX(-50%);
+        }
+      }
+    }
+
+    .es-nav-top {
+      /* stylelint-disable-next-line */
+      height: 0px;
+      display: none;
+      transition: height 240ms $t-1;
+    }
+  }
+
+  &-wrapper {
+    max-width: pxem(1600);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  &-desktop {
+
+    &-dropdown {
+      height: 0;
+      opacity: 0;
+      z-index: -1;
+      display: none;
+      top: pxem(50);
+      position: absolute;
+      white-space: nowrap;
+      margin-top: pxem(35);
+      box-shadow: $dropdown-shadow;
+      transition: opacity 240ms $t-1, height 240ms $t-1, z-index 240ms $t-1;
+
+      @include mq($from: $breakpoint-medium) {
+        margin-top: pxem(10);
+      }
+
+      &-carat {
+        left: 0;
+        top: pxem(-15);
+        padding-left: pxem(15);
+        width: 100%;
+        display: block;
+        height: pxem(15);
+        position: absolute;
+
+        &:before {
+          content: "";
+          bottom: 0;
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 0;
+          z-index: $z10;
+          border-top: pxem(10) solid transparent;
+          border-right: pxem(10) solid transparent;
+          border-left: pxem(10) solid transparent;
+          border-bottom: pxem(10) solid $fill-white;
+        }
+      }
+    }
+  }
+
+  li {
+
+    &.-active {
+
+      > a {
+        color: $text-blue;
+      }
+    }
+
+    &.has-dropdown {
+      position: relative;
+
+      &:hover,
+      &:focus {
+
+        > a {
+          color: $text-blue;
+          transition: color 240ms $t-1;
+        }
+
+        > .es-nav-desktop-dropdown {
+          opacity: 1;
+          height: auto;
+          z-index: 600;
+          display: table;
+          transition: opacity 240ms $t-1, height 240ms $t-1, z-index 240ms $t-1;
+
+          li {
+            padding-top: pxem(7);
+            padding-bottom: pxem(7);
+          }
+        }
+
+        > .es-nav-carat {
+          display: block;
+        }
+      }
+    }
+
+    &:last-of-type {
+
+      &.has-dropdown {
+
+        .es-nav-desktop-dropdown {
+          transform: translate(0);
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &-spacer {
+    width: pxem(140);
+  }
+
+  &-top {
+    height: auto;
+
+    @include mq($from: $breakpoint-medium) {
+      height: pxem(50);
+    }
+  }
+
+  &-search {
+    height: 0;
+    opacity: 0;
+    transition: opacity 240ms $t-1, height 500ms $t-1;
+    max-width: $body-max-width;
+    margin: 0 auto;
+
+    &.-open {
+      display: block;
+      height: pxem(60);
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 240ms $t-1, height 500ms $t-1;
+    }
+
+    &-icon {
+      width: pxem(20);
+      height: auto;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include mq($from: $breakpoint-small) {
+        width: pxem(18);
+      }
+    }
+
+    &-input {
+      caret-color: $fill-blue;
+      border: none;
+      background-color: transparent;
+      width: 100%;
+
+      &::placeholder {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &-logo {
+    width: pxem(145);
+
+    @include mq($from: $breakpoint-small) {
+      width: 100%;
+      max-width: pxem(200);
+    }
+  }
+
+  &-icon {
+    width: pxem(16);
+    height: auto;
+    margin-right: pxem(7);
+
+    &-support {
+      margin-top: pxem(-5);
+    }
+  }
+
+  &-mobile {
+    width: calc(100vw - 10px);
+    display: block;
+    /* stylelint-disable-next-line */
+    right: 0px;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 240ms $t-1;
+
+    @include mq($from: $breakpoint-small) {
+      display: none;
+    }
+
+    &.-open {
+      transform: translateX(0%);
+      transition: transform 240ms $t-1;
+    }
+
+    &-menu {
+      display: flex;
+      z-index: 1;
+
+      &.-show {
+        display: flex;
+
+        @include mq($from: $breakpoint-small) {
+          display: none;
+        }
+      }
+
+      &.-hide {
+        display: none;
+      }
+
+      img {
+        width: pxem(20);
+        height: pxem(14);
+      }
+    }
+
+    &-close {
+      display: none;
+      z-index: 1;
+
+      &.-show {
+        display: flex;
+
+        @include mq($from: $breakpoint-small) {
+          display: none;
+        }
+      }
+
+      &.-hide {
+        display: none;
+      }
+
+      img {
+        width: pxem(14);
+        height: pxem(14);
+      }
+    }
+
+    &-inner {
+      height: calc(100vh - 66px);
+      overflow-y: scroll;
+    }
+
+    &-links {
+
+      a {
+        width: 50%;
+      }
+
+      img {
+        width: pxem(16);
+        height: pxem(9);
+        transition: transform 240ms $t-1;
+        transform: rotateX(0deg);
+
+        &.-flip {
+          transition: transform 240ms $t-1;
+          transform: rotateX(180deg);
+        }
+      }
+    }
+
+    &-sub {
+      width: 100%;
+      background-color: #0C1C48;
+      border-top: 1px solid $nav-border-gray;
+      border-bottom: 1px solid $nav-border-gray;
+      display: none;
+      z-index: -1;
+      height: 0;
+      opacity: 0;
+      transition: height 240ms $t-1, opacity 240ms $t-1, z-index 240ms $t-1;
+
+      &.-expanded {
+        height: auto;
+        opacity: 1;
+        z-index: 1;
+        transition: height 240ms $t-1, opacity 240ms $t-1, z-index 240ms $t-1;
+      }
+
+      a {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    &-dropdown {
+      width: 50%;
+    }
+  }
+}

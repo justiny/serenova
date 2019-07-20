@@ -1,0 +1,17 @@
+.es-browser-chrome {
+  display: block;
+  height: 20px;
+  background-color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 15px;
+  box-shadow: $shadow-5;
+
+  &-dot {
+    height: 5px;
+    width: 5px;
+    background-color: #ffd800;
+    display: inline-block;
+    border-radius: 10px;
+  }
+}
