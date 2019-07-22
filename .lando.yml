@@ -1,0 +1,6 @@
+name: serenova-site
+recipe: pantheon
+config:
+  framework: wordpress
+  site: serenova-site
+  id: 4ed9025c-dbc5-4f43-9890-1574d14c47a6
