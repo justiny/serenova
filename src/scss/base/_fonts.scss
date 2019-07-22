@@ -43,26 +43,23 @@
 }
 
 @mixin akkurat {
-  font-family: "LL Akkurat Regular Web", serif;
+  font-family: "akkurat-regular", serif;
   font-style: normal;
-  font-display: fallback;
-  font-display: swap;
 }
 
 @mixin akkurat-italic {
-  font-family: "LL Akkurat Italic Web", serif;
+  font-family: "akkurat-italic", serif;
   font-style: normal;
-  font-display: swap;
 }
 
 @mixin akkurat-bold {
-  font-family: "LL Akkurat Bold Web", serif;
+  font-family: "akkurat-bold", serif;
   font-style: normal;
   font-display: swap;
 }
 
 @mixin akkurat-bold-italic {
-  font-family: "LL Akkurat Bold Italic Web", serif;
+  font-family: "akkurat-bold-italic", serif;
   font-style: normal;
   font-display: swap;
 }

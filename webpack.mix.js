@@ -40,34 +40,42 @@ mix
   .js("src/js/app.js", "wp-content/themes/serenova/assets/js/app.js")
   .js("src/js/components/polyfills.js", "wp-content/themes/serenova/assets/js/polyfills.js")
   .sass("src/scss/styles.scss", "wp-content/themes/serenova/assets/css/styles.css")
+  .browserSync({
+    proxy: "http://serenova.local",
+    files: [
+      "wp-content/themes/serenova/assets/css/styles.css",
+      "wp-content/themes/serenova/assets/js/app.js",
+      "wp-content/themes/serenova/views/core/*.twig"
+    ]
+  })
   .options({
     processCssUrls: false,
     postCss: [require("cssnano")()]
   });
 
+  // mix.browserSync({
+  //   proxy: 'https://www.serenova.com/',
+  //   serveStatic: ['wp-content/themes/serenova/assets/css', 'wp-content/themes/serenova/assets/js'],
+  //   files: ['wp-content/themes/serenova/assets/js/app.js','wp-content/themes/serenova/assets/js/polyfills.js','wp-content/themes/serenova/assets/css/styles.css'],
+  //   rewriteRules: [
+  //     {
+  //       match: new RegExp('(?:https?)?:?\/\/(?:www\.)?(?:.*)(?:\/wp-content\/themes\/serenova\/assets\/js\/app.*?).js'),
+  //       fn: function() {
+  //         return '/app.js';
+  //       }
+  //     },
+  //     {
+  //       match: new RegExp('(?:https?)?:?\/\/(?:www\.)?(?:.*)(?:\/wp-content\/themes\/serenova\/assets\/js\/polyfills.*?).js'),
+  //       fn: function() {
+  //         return '/polyfills.js';
+  //       }
+  //     },
+  //     {
+  //       match: new RegExp('https://www.serenova.com/wp-content/cache/min/1/627aa6e99fd7cfbedbcc4defd1cc90fd.css'),
+  //       fn: function() {
+  //         return '/styles.css';
+  //       }
+  //     }
+  // ]
 
-  mix.browserSync({
-    proxy: 'https://www.serenova.com/',
-    serveStatic: ['wp-content/themes/serenova/assets/css', 'wp-content/themes/serenova/assets/js'],
-    files: ['wp-content/themes/serenova/assets/js/app.js','wp-content/themes/serenova/assets/js/polyfills.js','wp-content/themes/serenova/assets/css/styles.css'],
-    rewriteRules: [
-      {
-        match: new RegExp('(?:https?)?:?\/\/(?:www\.)?(?:.*)(?:\/wp-content\/themes\/serenova\/assets\/js\/app.*?).js'),
-        fn: function() {
-          return '/app.js';
-        }
-      },
-      {
-        match: new RegExp('(?:https?)?:?\/\/(?:www\.)?(?:.*)(?:\/wp-content\/themes\/serenova\/assets\/js\/polyfills.*?).js'),
-        fn: function() {
-          return '/polyfills.js';
-        }
-      },
-      {
-        match: new RegExp('https://www.serenova.com/wp-content/cache/min/1/627aa6e99fd7cfbedbcc4defd1cc90fd.css'),
-        fn: function() {
-          return '/styles.css';
-        }
-      }
-  ]
-});
+// });
