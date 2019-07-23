@@ -1,9 +1,9 @@
-=== Imagify - WebP & Image Compression ===
+=== Imagify – WebP & Image Compression and Optimization ===
 Contributors: wp_media, GregLone
-Tags: compress image, images, optimize, performance, webp
+Tags: optimize images, images, optimize, performance, webp
 Requires at least: 4.0.0
 Tested up to: 5.2.2
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 
 Optimize images in one click: reduce image file sizes, convert WebP, keep your images beautiful… and boost your loading time and your SEO!
 
@@ -153,6 +153,10 @@ When the plugin is disabled, your existing images remain optimized. Backups of t
 4. Other Media Page
 
 == Changelog ==
+= 1.9.6 - 2019/07/22 =
+* Improvement: now images that are "already optimized" can also get webp versions.
+* Fix: progress bar height in the admin bar for Chrome and Safari.
+
 = 1.9.5 - 2019/07/16 =
 * Improvement: Basic Authentication support. If it does not work automatically, you can still define the constants `IMAGIFY_AUTH_USER` and `IMAGIFY_AUTH_PASSWORD` in your `wp-config.php` file.
 * Improvement: webp images are not created for animated gif images by default anymore. Use the filter `imagify_pre_can_create_webp_version` if you still want to create an unanimated webp version of them.

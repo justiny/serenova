@@ -147,7 +147,7 @@ if ( ! defined( 'WP_DEBUG' ) ) {
     define('WP_DEBUG', false);
 }
 
-define('WP_CACHE', true); // Added by WP Rocket
+define('WP_CACHE', false); // Added by WP Rocket
 define('DISALLOW_FILE_EDIT', false);
 
 if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {

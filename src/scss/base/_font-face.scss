@@ -59,12 +59,25 @@
     font-style: normal;
 }
 
+// @font-face {
+//     font-family: "akkurat-regular", serif;
+//     src: url("../fonts/lineto-akkurat-regular.eot");
+//     src: url("../fonts/lineto-akkurat-regular.eot?#iefix") format("embedded-opentype"),
+//          url("../fonts/lineto-akkurat-regular.woff2") format("woff2"),
+//          url("../fonts/lineto-akkurat-regular.woff") format("woff");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
 @font-face {
-    font-family: "akkurat-regular", serif;
-    src: url("../fonts/lineto-akkurat-regular.eot");
-    src: url("../fonts/lineto-akkurat-regular.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/lineto-akkurat-regular.woff2") format("woff2"),
-         url("../fonts/lineto-akkurat-regular.woff") format("woff");
+    font-family: 'akkurat-regular';
+    src: url('../fonts/hinted-Akkurat-Regular.eot');
+    src: local('Akkurat Regular'), local('Akkurat-Regular'),
+        url('../fonts/hinted-Akkurat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/hinted-Akkurat-Regular.woff2') format('woff2'),
+        url('../fonts/hinted-Akkurat-Regular.woff') format('woff'),
+        url('../fonts/hinted-Akkurat-Regular.ttf') format('truetype'),
+        url('../fonts/hinted-Akkurat-Regular.svg#Akkurat-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
