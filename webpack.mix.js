@@ -41,7 +41,7 @@ mix
   .js("src/js/components/polyfills.js", "wp-content/themes/serenova/assets/js/polyfills.js")
   .sass("src/scss/styles.scss", "wp-content/themes/serenova/assets/css/styles.css")
   .browserSync({
-    proxy: "http://serenova.local",
+    proxy: "http://serenova-site.lndo.site",
     files: [
       "wp-content/themes/serenova/assets/css/styles.css",
       "wp-content/themes/serenova/assets/js/app.js",

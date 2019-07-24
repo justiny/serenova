@@ -30,13 +30,8 @@ class Enqueue
 
     // JS
     wp_enqueue_script( 'polyfills', get_template_directory_uri() . '/assets/js/polyfills.js', array(), '1.0.0', false );
-
-
-
-      wp_enqueue_script( 'manifest-js', get_template_directory_uri() . '/assets/js/manifest.js', array(), '1.0.0', true );
-      wp_enqueue_script( 'vue-js', get_template_directory_uri() . '/assets/js/vendor.js', array(), '1.0.0', true );
-
-
+    wp_enqueue_script( 'manifest-js', get_template_directory_uri() . '/assets/js/manifest.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'vue-js', get_template_directory_uri() . '/assets/js/vendor.js', array(), '1.0.0', true );
     wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/app.js', array(), '1.0.0', true );
 
     // Extra
