@@ -34,6 +34,10 @@ class Enqueue
     wp_enqueue_script( 'vue-js', get_template_directory_uri() . '/assets/js/vendor.js', array(), '1.0.0', true );
     wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/app.js', array(), '1.0.0', true );
 
+    if ( is_page( array( '203', '6' ) ) ) {
+      wp_enqueue_script( 'plyr-polyfill', get_template_directory_uri() . '/assets/js/plyr-polyfill.js', array(), '1.0.0', true );
+    }
+
     // Extra
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
       wp_enqueue_script( 'comment-reply' );
