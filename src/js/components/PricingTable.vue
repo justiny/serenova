@@ -20,13 +20,16 @@
           </select>
         </div>
       </div>
+      <!-- Mobile Tabs -->
       <div class="es-col-xs-6 es-pricing-tabs flex flex-wrap justify-space-around xs-mt-30">
         <button :class="['es-pricing-item text-center xs-pt-15 xs-pb-15 fill-dark-50 text-white text-15-bold caps', activeMobile == 'essential' ? '-active' : '']"  @click="activeMobile = 'essential'" tabindex="0" role="button" aria-labelledby="Show essential tab">Essential</button>
         <button :class="['es-pricing-item text-center xs-pt-15 xs-pb-15 fill-dark-50 text-white text-15-bold caps', activeMobile == 'pro' ? '-active' : '']"  @click="activeMobile = 'pro'" tabindex="0" role="button" aria-labelledby="Show pro tab">Pro</button>
         <button :class="['es-pricing-item text-center xs-pt-15 xs-pb-15 fill-dark-50 text-white text-15-bold caps', activeMobile == 'ultimate' ? '-active' : '']"  @click="activeMobile = 'ultimate'" tabindex="0" role="button" aria-labelledby="Show ultimate tab">Ultimate</button>
       </div>
     </div>
+
     <div class="es-pricing-table es-pricing-table-desktop flex flex-wrap">
+      <!-- Essential -->
       <div class="es-pricing-col es-span-xs-6 es-span-sm-2" v-if="(activeMobile == 'essential' && windowWidth < 753) || windowWidth >= 753">
         <div class="es-pricing-col-inner text-center xs-pt-20 xs-pb-20 xs-pr-20 xs-pl-20 fill-dark-80 text-dark-10">
           <h2 class="title-1">Essential</h2>
@@ -61,7 +64,7 @@
           </div>
         </div>
       </div>
-
+      <!-- Pro -->
       <div class="es-pricing-col es-pricing-col-featured relative es-span-xs-6 es-span-sm-2" v-if="(activeMobile == 'pro' && windowWidth < 753) || windowWidth >= 753">
         <div class="es-pricing-col-inner text-center xs-pt-20 xs-pb-20 xs-pr-20 xs-pl-20 fill-blue-dark text-white">
           <h2 class="title-1">Pro</h2>
@@ -97,7 +100,7 @@
           </div>
         </div>
       </div>
-
+      <!-- Ultimate -->
       <div class="es-pricing-col es-span-xs-6 es-span-sm-2" v-if="(activeMobile == 'ultimate' && windowWidth < 753) || windowWidth >= 753">
         <div class="es-pricing-col-inner text-center xs-pt-20 xs-pb-20 xs-pr-20 xs-pl-20 fill-dark-80 text-dark-10">
           <h2 class="title-1">Ultimate</h2>
@@ -138,7 +141,7 @@
 </template>
 
 <script>
-  import pricingData from "../PricingData.json";
+import pricingData from "../PricingData.json";
 export default {
   data() {
     return {

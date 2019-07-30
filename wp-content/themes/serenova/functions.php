@@ -8,9 +8,9 @@ if ( class_exists( 'ES\\Init' ) ) :
 endif;
 
 // remove timber caching
-add_filter( 'timber/cache/mode', function () {
-    return 'none';
-} );
+// add_filter( 'timber/cache/mode', function () {
+//     return 'none';
+// } );
 
 // Disable Gutenberg editor.
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
