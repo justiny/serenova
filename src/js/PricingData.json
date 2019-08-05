@@ -1,32 +1,31 @@
 {
   "info": {
     "essential": [
-      "Inbound Voice",
-      "Outbound Voice",
-      "Unlimited Sub-Tenants &amp; Roles",
+      "Voice",
+      "Unlimited Sub-Tenants",
       "Standard IVR",
       "Standard Reports",
       "Skills-Based Routing",
       "Configuration &amp; Administrative APIs",
-      "50GB Media Storage Per Tenant &ast;",
+      "50gb Media Storage Per Tenant",
       "Standard Support"
     ],
     "pro": [
-      "All Essential Features",
+      "Everything in Essential, Plus:",
       "Custom Reports &amp; Statistics",
-      "Real-Time Reporting API",
-      "Historical Reporting API",
+      "Real-Time &amp; Historical Reporting API",
       "Silent Monitoring & Barge-In",
       "Queue Call Back",
-      "Basic Scripting"
+      "Basic Scripting",
+      "Single Sign-On"
     ],
     "ultimate": [
-      "All Pro Features",
-      "Email Channel Functionality",
-      "Chat Channel Functionality",
-      "SMS Channel Functionality",
+      "Everything in Pro, Plus:",
+      "Email",
+      "Chat",
+      "SMS",
       "3rd-Party Work Items",
-      "Facebook Messenger Chat Integration",
+      "Facebook Messenger",
       "Real-Time Adherence API"
     ]
   },
@@ -42,10 +41,6 @@
               "cost": "10 per channel"
             },
             {
-              "feature": "Twilio Call Recording",
-              "cost": "10"
-            },
-            {
               "feature": "CRM Integration",
               "cost": "10"
             },
@@ -62,8 +57,24 @@
               "cost": "2.50"
             },
             {
+              "feature": "Single  Sign-On",
+              "cost": "1"
+            },
+            {
               "feature": "Real-Time Adherence API",
               "cost": "5"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "30"
+            },
+            {
+              "feature": "WFM",
+              "cost": "33"
             }
           ]
         },
@@ -76,16 +87,24 @@
               "cost": "10 per channel"
             },
             {
-              "feature": "Twilio Call Recording",
-              "cost": "10"
-            },
-            {
               "feature": "CRM Integration",
               "cost": "10"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "5"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "30"
+            },
+            {
+              "feature": "WFM",
+              "cost": "33"
             }
           ]
         },
@@ -94,12 +113,20 @@
           "price": 129,
           "additional": [
             {
-              "feature": "Twilio Call Recording",
+              "feature": "CRM Integration",
               "cost": "10"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "10"
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "30"
+            },
+            {
+              "feature": "WFM",
+              "cost": "33"
             }
           ]
         },
@@ -107,69 +134,97 @@
       },
       "AUD": {
         "essential": {
-          "price": 79,
+          "price": 85,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "13.50 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "13.50"
+              "cost": "15 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "13.50"
+              "cost": "15"
             },
             {
               "feature": "Basic Scripting",
-              "cost": "4"
+              "cost": "5"
             },
             {
               "feature": "Silent Monitoring & Barge-In",
-              "cost": "3.50"
+              "cost": "4"
             },
             {
               "feature": "Queue Callback",
-              "cost": "3.50"
+              "cost": "4"
+            },
+            {
+              "feature": "Single  Sign-On",
+              "cost": "2"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7"
+              "cost": "8"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "44"
+            },
+            {
+              "feature": "WFM",
+              "cost": "48"
             }
           ]
         },
         "pro": {
-          "price": 132,
+          "price": 143,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "13.50 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "13.50"
+              "cost": "15 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "13.50"
+              "cost": "15"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7"
+              "cost": "8"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "44"
+            },
+            {
+              "feature": "WFM",
+              "cost": "48"
             }
           ]
         },
         "ultimate": {
-          "price": 172,
+          "price": 186,
           "additional": [
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "13.50"
+           {
+              "feature": "CRM Integration",
+              "cost": "15"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "13.50"
+              "feature": "Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "44"
+            },
+            {
+              "feature": "WFM",
+              "cost": "48"
             }
           ]
         },
@@ -177,69 +232,97 @@
       },
       "NZD": {
         "essential": {
-          "price": 83,
+          "price": 89,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "14 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "14"
+              "cost": "15 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "14"
+              "cost": "15"
             },
             {
               "feature": "Basic Scripting",
-              "cost": "4.50"
+              "cost": "5"
             },
             {
               "feature": "Silent Monitoring & Barge-In",
-              "cost": "3.50"
+              "cost": "4"
             },
             {
               "feature": "Queue Callback",
-              "cost": "3.50"
+              "cost": "4"
+            },
+            {
+              "feature": "Single  Sign-On",
+              "cost": "2"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7"
+              "cost": "8"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "45"
+            },
+            {
+              "feature": "WFM",
+              "cost": "50"
             }
           ]
         },
         "pro": {
-          "price": 139,
+          "price": 149,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "14 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "14"
+              "cost": "15 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "14"
+              "cost": "15"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7"
+              "cost": "8"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "45"
+            },
+            {
+              "feature": "WFM",
+              "cost": "50"
             }
           ]
         },
         "ultimate": {
-          "price": 181,
+          "price": 194,
           "additional": [
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "14"
+           {
+              "feature": "CRM Integration",
+              "cost": "15"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "14"
+              "feature": "Call Recording",
+              "cost": "8"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "45"
+            },
+            {
+              "feature": "WFM",
+              "cost": "50"
             }
           ]
         },
@@ -247,69 +330,97 @@
       },
       "EUR": {
         "essential": {
-          "price": 56,
+          "price": 53,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "10 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "10"
+              "cost": "9 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "10"
-            },
-            {
-              "feature": "Basic Scripting",
               "cost": "3"
             },
             {
+              "feature": "Basic Scripting",
+              "cost": "4"
+            },
+            {
               "feature": "Silent Monitoring & Barge-In",
-              "cost": "2.50"
+              "cost": "4"
             },
             {
               "feature": "Queue Callback",
-              "cost": "2.50"
+              "cost": "4"
+            },
+            {
+              "feature": "Single  Sign-On",
+              "cost": "1"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "5"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "27"
+            },
+            {
+              "feature": "WFM",
+              "cost": "30"
             }
           ]
         },
         "pro": {
-          "price": 94,
+          "price": 89,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "10 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "10"
+              "cost": "9 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "10"
+              "cost": "9"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "5"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "27"
+            },
+            {
+              "feature": "WFM",
+              "cost": "30"
             }
           ]
         },
         "ultimate": {
-          "price": 122,
+          "price": 115,
           "additional": [
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "10"
+           {
+              "feature": "CRM Integration",
+              "cost": "9"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "10"
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "27"
+            },
+            {
+              "feature": "WFM",
+              "cost": "30"
             }
           ]
         },
@@ -317,23 +428,19 @@
       },
       "GBP": {
         "essential": {
-          "price": 43,
+          "price": 48,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "7.50 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "8"
+              "cost": "8 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "7.50"
+              "cost": "8"
             },
             {
               "feature": "Basic Scripting",
-              "cost": "2.50"
+              "cost": "3"
             },
             {
               "feature": "Silent Monitoring & Barge-In",
@@ -344,48 +451,82 @@
               "cost": "2"
             },
             {
+              "feature": "Single  Sign-On",
+              "cost": "1"
+            },
+            {
               "feature": "Real-Time Adherence API",
               "cost": "4"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "4"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "24"
+            },
+            {
+              "feature": "WFM",
+              "cost": "27"
             }
           ]
         },
         "pro": {
-          "price": 71,
+          "price": 80,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "7.50 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "8"
+              "cost": "8 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "7.50"
+              "cost": "8"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "4"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "4"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "24"
+            },
+            {
+              "feature": "WFM",
+              "cost": "27"
             }
           ]
         },
         "ultimate": {
-          "price": 93,
+          "price": 104,
           "additional": [
-            {
-              "feature": "Twilio Call Recording",
+           {
+              "feature": "CRM Integration",
               "cost": "8"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "7.50"
+              "feature": "Call Recording",
+              "cost": "4"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "24"
+            },
+            {
+              "feature": "WFM",
+              "cost": "27"
             }
           ]
         },
         "symbol": "\u00a3"
       }
     },
+
+
     "concurrent": {
       "USD": {
         "essential": {
@@ -394,10 +535,6 @@
             {
               "feature": "Additional Channels",
               "cost": "12 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "10 / named"
             },
             {
               "feature": "CRM Integration",
@@ -416,8 +553,24 @@
               "cost": "3"
             },
             {
+              "feature": "Single Sign-On",
+              "cost": "1.25"
+            },
+            {
               "feature": "Real-Time Adherence API",
               "cost": "5 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "6"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "30 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "33 / named"
             }
           ]
         },
@@ -429,16 +582,24 @@
               "cost": "12 per channel"
             },
             {
-              "feature": "Twilio Call Recording",
-              "cost": "10 / named"
-            },
-            {
               "feature": "CRM Integration",
               "cost": "12"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "5 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "6"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "30 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "33 / named"
             }
           ]
         },
@@ -446,12 +607,20 @@
           "price": 155,
           "additional": [
             {
-              "feature": "Twilio Call Recording",
-              "cost": "10 / named"
-            },
-            {
               "feature": "CRM Integration",
               "cost": "12"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "6"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "30 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "33 / named"
             }
           ]
         },
@@ -459,69 +628,97 @@
       },
       "AUD": {
         "essential": {
-          "price": 95,
+          "price": 103,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "16 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "13.50 / named"
+              "cost": "18 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "16"
+              "cost": "18"
             },
             {
               "feature": "Basic Scripting",
-              "cost": "5"
+              "cost": "6"
             },
             {
               "feature": "Silent Monitoring & Barge-In",
-              "cost": "4"
+              "cost": "5"
             },
             {
               "feature": "Queue Callback",
-              "cost": "4"
+              "cost": "5"
+            },
+            {
+              "feature": "Single Sign-On",
+              "cost": "2"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7 / named"
+              "cost": "8 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "9"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "44 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "48 / named"
             }
           ]
         },
         "pro": {
-          "price": 158,
+          "price": 172,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "16 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "13.50 / named"
+              "cost": "18 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "16"
+              "cost": "18"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7 / named"
+              "cost": "8 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "9"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "44 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "48 / named"
             }
           ]
         },
         "ultimate": {
-          "price": 206,
+          "price": 224,
           "additional": [
             {
-              "feature": "Twilio Call Recording",
-              "cost": "13.50 / named"
+              "feature": "CRM Integration",
+              "cost": "18"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "16"
+              "feature": "Call Recording",
+              "cost": "9"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "44 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "48 / named"
             }
           ]
         },
@@ -529,69 +726,97 @@
       },
       "NZD": {
         "essential": {
-          "price": 100,
+          "price": 107,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "17 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "$14 / named"
+              "cost": "18 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "17"
+              "cost": "18"
             },
             {
               "feature": "Basic Scripting",
-              "cost": "5"
+              "cost": "6"
             },
             {
               "feature": "Silent Monitoring & Barge-In",
-              "cost": "4"
+              "cost": "5"
             },
             {
               "feature": "Queue Callback",
-              "cost": "4"
+              "cost": "5"
+            },
+            {
+              "feature": "Single Sign-On",
+              "cost": "2"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7 / named"
+              "cost": "8 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "9"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "45 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "50 / named"
             }
           ]
         },
         "pro": {
-          "price": 167,
+          "price": 179,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "17 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "14 / named"
+              "cost": "18 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "17"
+              "cost": "18"
             },
             {
               "feature": "Real-Time Adherence API",
-              "cost": "7 / named"
+              "cost": "8 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "9"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "45 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "50 / named"
             }
           ]
         },
         "ultimate": {
-          "price": 217,
+          "price": 233,
           "additional": [
             {
-              "feature": "Twilio Call Recording",
-              "cost": "14 / named"
+              "feature": "CRM Integration",
+              "cost": "18"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "17"
+              "feature": "Call Recording",
+              "cost": "9"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "45 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "50 / named"
             }
           ]
         },
@@ -599,23 +824,19 @@
       },
       "EUR": {
         "essential": {
-          "price": 67,
+          "price": 64,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "12 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "10 / named"
+              "cost": "11 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "12"
+              "cost": "11"
             },
             {
               "feature": "Basic Scripting",
-              "cost": "3.5"
+              "cost": "4"
             },
             {
               "feature": "Silent Monitoring & Barge-In",
@@ -626,42 +847,74 @@
               "cost": "3"
             },
             {
+              "feature": "Single Sign-On",
+              "cost": "2"
+            },
+            {
               "feature": "Real-Time Adherence API",
               "cost": "5 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "6"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "27 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "30 / named"
             }
           ]
         },
         "pro": {
-          "price": 112,
+          "price": 106,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "12 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "10 / named"
+              "cost": "11 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "12"
+              "cost": "11"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "5 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "6"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "27 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "30 / named"
             }
           ]
         },
         "ultimate": {
-          "price": 146,
+          "price": 138,
           "additional": [
             {
-              "feature": "Twilio Call Recording",
-              "cost": "10 / named"
+              "feature": "CRM Integration",
+              "cost": "11"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "12"
+              "feature": "Call Recording",
+              "cost": "6"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "27 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "30 / named"
             }
           ]
         },
@@ -669,19 +922,15 @@
       },
       "GBP": {
         "essential": {
-          "price": 51,
+          "price": 57,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "9 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "8 / named"
+              "cost": "10 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "9"
+              "cost": "10"
             },
             {
               "feature": "Basic Scripting",
@@ -689,49 +938,81 @@
             },
             {
               "feature": "Silent Monitoring & Barge-In",
-              "cost": "2.50"
+              "cost": "3"
             },
             {
               "feature": "Queue Callback",
-              "cost": "2.50"
+              "cost": "3"
+            },
+            {
+              "feature": "Single Sign-On",
+              "cost": "1"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "4 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "24 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "27 / named"
             }
           ]
         },
         "pro": {
-          "price": 86,
+          "price": 96,
           "additional": [
             {
               "feature": "Additional Channels",
-              "cost": "9 per channel"
-            },
-            {
-              "feature": "Twilio Call Recording",
-              "cost": "8 / named"
+              "cost": "10 per channel"
             },
             {
               "feature": "CRM Integration",
-              "cost": "9"
+              "cost": "10"
             },
             {
               "feature": "Real-Time Adherence API",
               "cost": "4 / named"
+            },
+            {
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "24 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "27 / named"
             }
           ]
         },
         "ultimate": {
-          "price": 112,
+          "price": 124,
           "additional": [
             {
-              "feature": "Twilio Call Recording",
-              "cost": "8 / named"
+              "feature": "CRM Integration",
+              "cost": "10"
             },
             {
-              "feature": "CRM Integration",
-              "cost": "9"
+              "feature": "Call Recording",
+              "cost": "5"
+            },
+            {
+              "feature": "QM Bundle",
+              "cost": "24 / named"
+            },
+            {
+              "feature": "WFM",
+              "cost": "27 / named"
             }
           ]
         },

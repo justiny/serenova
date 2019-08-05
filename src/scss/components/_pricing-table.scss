@@ -91,11 +91,11 @@
       height: auto;
 
       @include mq($from: $breakpoint-small) {
-        height: pxem(390);
+        height: pxem(480);
       }
 
       @include mq($from: $breakpoint-medium) {
-        height: pxem(330);
+        height: pxem(415);
       }
     }
   }

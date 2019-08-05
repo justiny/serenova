@@ -36,12 +36,12 @@ mix.autoload({
 });
 
 mix
-  .extract(['vue','jquery'])
+  .extract(['vue','jquery','venobox','plyr'])
   .js("src/js/app.js", "wp-content/themes/serenova/assets/js/app.js")
   .js("src/js/components/polyfills.js", "wp-content/themes/serenova/assets/js/polyfills.js")
   .sass("src/scss/styles.scss", "wp-content/themes/serenova/assets/css/styles.css")
   .browserSync({
-    proxy: "http://serenova-site.lndo.site",
+    proxy: "http://localhost:3000",
     files: [
       "wp-content/themes/serenova/assets/css/styles.css",
       "wp-content/themes/serenova/assets/js/app.js",
