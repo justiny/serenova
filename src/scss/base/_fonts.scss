@@ -4,42 +4,36 @@
   font-family: "Gotham SSm A", "Gotham SSm B", serif;
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
 }
 
 @mixin gotham-bold {
   font-family: "Gotham SSm A", "Gotham SSm B", serif;
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
 }
 
 @mixin caecilia {
   font-family: "caecilia", serif;
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
 }
 
 @mixin caecilia-italic {
   font-family: "caecilia", serif;
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
 }
 
 @mixin caecilia-bold {
   font-family: "caecilia", serif;
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
 }
 
 @mixin caecilia-bold-italic {
   font-family: "caecilia", serif;
   font-style: italic;
   font-weight: 700;
-  font-display: swap;
 }
 
 @mixin akkurat {
@@ -55,11 +49,9 @@
 @mixin akkurat-bold {
   font-family: "akkurat-bold", serif;
   font-style: normal;
-  font-display: swap;
 }
 
 @mixin akkurat-bold-italic {
   font-family: "akkurat-bold-italic", serif;
   font-style: normal;
-  font-display: swap;
 }
