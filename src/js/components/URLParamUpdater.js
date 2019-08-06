@@ -7,6 +7,7 @@ $(document).ready(function () {
   var referrerParams;
   var params = {};
 
+  // Set object for the params we're tracking to pass through
   var trackedParams = [
     "utm_content",
     "utm_term",
@@ -20,6 +21,8 @@ $(document).ready(function () {
     referrerParams = queryString.parse(referrer);
   }
 
+  // Set current params either to the params from the referrer
+  // or if there are params from the previous page
   trackedParams.forEach(function(param) {
     if (!!referrerParams && !!referrerParams[param]) {
       params[param] = referrerParams[param];
@@ -32,60 +35,46 @@ $(document).ready(function () {
 
   params = _.merge(oldParams, params);
 
-
+  // loop over each link on page to add params
   $("a").each(function (i, link) {
     var base = link.href.split("?")[0];
     var href = link.href;
+    var linkParams = params;
 
-    if (href.includes('serenova-site.lndo.site')) {
-      // if (params.CLS = "MKTG_Website_Inquiry") {
-      //   params.CLS = ""
-      // }
+    // make sure we're on serenova
+    if (href.includes('serenova.com')) {
 
+      // don't mess with pagination
       if (!$(link).hasClass("pagination-link") || !$(link).hasClass("page-number")) {
-        params.s = undefined;
+        linkParams.s = undefined;
       } else {
-        params.s = oldParams.s;
+        linkParams.s = oldParams.s;
       }
 
-
-      if (!params.CLS) {
-        // if (window.location.href.includes("/blog") && $(link).parents('.es-main').length) {
-        if (window.location.href.includes("/blog")) {
-          params.CLS = "MKTG_Blog";
-          const stringified = queryString.stringify(params);
+      // only loop through if we don't have any params
+      if (!linkParams.CLS) {
+        if (window.location.href.includes("/blog") && $(link).parents('.es-main').length) {
+          linkParams.CLS = "MKTG_Blog";
+          const stringified = queryString.stringify(linkParams);
           if (stringified.length) {
             link.href = base + "?" + stringified;
           }
         } else if (href.includes("/become-a-partner") || href.includes("/contact") || href.includes("/request-a-demo") || href.includes("/premium-support") || href.includes("/trial") || href.includes("/request-partner-portal-access") || href.includes("/unsubscribe")) {
-
-          params.CLS = "MKTG_Website_Inquiry";
-
-          const stringified = queryString.stringify(params);
+          linkParams.CLS = "MKTG_Website_Inquiry";
+          const stringified = queryString.stringify(linkParams);
           if (stringified.length) {
             link.href = base + "?" + stringified;
           }
-
-        } else if (href.includes("//succeed.serenova.com") || href.includes("//success.serenova.com") )  {
-          params.CLS = "MKTG_Website_Download";
-          console.log('updating on: ');
-          const stringified = queryString.stringify(params);
-          if (stringified.length) {
-            link.href = base + "?" + stringified;
-          }
-        } else if ( window.location.href.includes("/resources") && href.includes("//www.serenova.com/resources/wp-content/uploads/") ) {
-          params.CLS = "MKTG_Website_Download";
-          console.log('updating on: ');
-          const stringified = queryString.stringify(params);
+        } else if ( window.location.href.includes("/resources") && ( href.includes("succeed.serenova.com") || href.includes("success.serenova.com") || href.includes("/wp-content/uploads/") ) )  {
+          linkParams.CLS = "MKTG_Website_Download";
+          const stringified = queryString.stringify(linkParams);
           if (stringified.length) {
             link.href = base + "?" + stringified;
           }
         }
       } else {
-        const stringified = queryString.stringify(params);
-          if (stringified.length) {
-            link.href = base + "?" + stringified;
-          }
+        const stringified = queryString.stringify(linkParams);
+        link.href = base + "?" + stringified;
       }
     }
   });
@@ -93,17 +82,18 @@ $(document).ready(function () {
   $("iframe").each(function (i, iframe) {
     var base = iframe.src.split("?")[0];
     var src = iframe.src;
+    var iframeParams = params;
 
-    if (!location.search.length || (!location.search.length && !params.CLS)) {
+    if (!location.search.length || (!location.search.length && !iframeParams.CLS)) {
       if (src.includes("success.serenova.com")) {
-        params.CLS = "MKTG_Website_Inquiry";
-        const stringified = queryString.stringify(params);
+        iframeParams.CLS = "MKTG_Website_Inquiry";
+        const stringified = queryString.stringify(iframeParams);
         if (stringified.length) {
           iframe.href = base + "?" + stringified;
         }
       }
     } else {
-      const stringified = queryString.stringify(params);
+      const stringified = queryString.stringify(iframeParams);
       if (stringified.length) {
         iframe.href = base + "?" + stringified;
       }
