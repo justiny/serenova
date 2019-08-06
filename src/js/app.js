@@ -1,5 +1,4 @@
 window.$ = window.jQuery = require("jquery");
-
 import "./components/venobox.js";
 import "./components/navScroll.js";
 import "./components/searchToggle.js";
