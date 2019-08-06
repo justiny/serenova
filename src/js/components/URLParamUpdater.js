@@ -64,12 +64,14 @@ $(document).ready(function () {
           }
         } else if (href.includes("//succeed.serenova.com") || href.includes("//success.serenova.com") )  {
           params.CLS = "MKTG_Website_Download";
+          console.log('updating on: ', href);
           const stringified = queryString.stringify(params);
           if (stringified.length) {
             link.href = base + "?" + stringified;
           }
         } else if ( window.location.href.includes("//www.serenova.com/resources") && href.includes("//www.serenova.com/resources/wp-content/uploads/") ) {
           params.CLS = "MKTG_Website_Download";
+          console.log('updating on: ', href);
           const stringified = queryString.stringify(params);
           if (stringified.length) {
             link.href = base + "?" + stringified;
