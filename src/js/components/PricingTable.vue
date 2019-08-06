@@ -47,7 +47,7 @@
         </div>
         <div class="es-pricing-col-middle fill-white xs-pb-40 xs-pl-20 xs-pr-20">
           <hr>
-          <h4 class="title-2 text-dark-10 xs-mt-20">Essential Add-on Features:</h4>
+          <h4 class="title-2 text-dark-10 xs-mt-20">Essential Add-ons:</h4>
           <ul class="list-unstyled xs-pt-20">
             <li class="text-16 xs-mb-5 flex justify-space-between" v-for="(item, i) in setFeatures('essential')" :key="i">
               <span class="text-dark-30">{{ item.feature }}</span>
@@ -68,7 +68,7 @@
       <div class="es-pricing-col es-pricing-col-featured relative es-span-xs-6 es-span-sm-2" v-if="(activeMobile == 'pro' && windowWidth < 753) || windowWidth >= 753">
         <div class="es-pricing-col-inner text-center xs-pt-20 xs-pb-20 xs-pr-20 xs-pl-20 fill-blue-dark text-white">
           <h2 class="title-1">Pro</h2>
-          <p class="text-14-italic xs-mb-20 sm-mb-40">For more advanced reporting and powerful APIs</p>
+          <p class="text-14-italic xs-mb-20 sm-mb-40">Advanced reporting and powerful APIs</p>
           <h3 class="title-4">{{ setPrice("pro") }}</h3>
           <p class="text-14-italic">per {{ activeUsage }} agent per month</p>
           <p class="text-16 xs-mt-5 xs-mb-20">Billed Annually</p>
@@ -82,7 +82,7 @@
         </div>
         <div class="es-pricing-col-middle fill-white xs-pb-40 xs-pl-20 xs-pr-20">
           <hr>
-          <h4 class="title-2 text-dark-10 xs-mt-20">Pro Add-on Features:</h4>
+          <h4 class="title-2 text-dark-10 xs-mt-20">Pro-Add-ons:</h4>
           <ul class="list-unstyled xs-pt-20">
             <!-- here -->
             <li class="text-16 xs-mb-5 flex justify-space-between" v-for="(item, i) in setFeatures('pro')" :key="i">
@@ -118,7 +118,7 @@
         </div>
         <div class="es-pricing-col-middle fill-white xs-pb-40 xs-pl-20 xs-pr-20">
           <hr>
-          <h4 class="title-2 text-dark-10 xs-mt-20">Ultimate Add-on Features:</h4>
+          <h4 class="title-2 text-dark-10 xs-mt-20">Ultimate Add-ons:</h4>
           <ul class="list-unstyled xs-pt-20">
             <!-- here -->
             <li class="text-16 xs-mb-5 flex justify-space-between" v-for="(item, i) in setFeatures('ultimate')" :key="i">
