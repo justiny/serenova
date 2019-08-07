@@ -59,7 +59,7 @@ $(document).ready(function () {
           if (stringified.length) {
             link.href = base + "?" + stringified;
           }
-        } else if (window.location.href.includes("/become-a-partner") || window.location.href.includes("/contact") || window.location.href.includes("/request-a-demo") || window.location.href.includes("/premium-support") || window.location.href.includes("/trial") || window.location.href.includes("/request-partner-portal-access") || window.location.href.includes("/unsubscribe")) {
+        } else if (href.includes("/become-a-partner") || href.includes("/contact") || href.includes("/request-a-demo") || href.includes("/premium-support") || href.includes("/trial") || href.includes("/request-partner-portal-access") || href.includes("/unsubscribe")) {
           linkParams.CLS = "MKTG_Website_Inquiry";
           const stringified = queryString.stringify(linkParams);
           if (stringified.length) {
