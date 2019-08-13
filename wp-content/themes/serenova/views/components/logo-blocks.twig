@@ -19,7 +19,7 @@
     {% set logo_image = TimberImage(lb.logo_image).src|tojpg|resize(720, 418) %}
     {% set logo_alt = TimberImage(lb.logo_image).alt %}
     <div class="logo-blocks-item flex">
-      <img src="{{ logo_image }}" alt="{{ logo_alt }}">
+      <img src="{{ logo_image }}" alt="{{ logo_alt }}" loading="lazy">
     </div>
     {% endfor %}
   </div>
