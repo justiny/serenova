@@ -20,7 +20,7 @@
     "jquery": "^3.3.1",
     "js-yaml": "^3.9.1",
     "laravel-mix": "^4.0.15",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.21",
     "plyr": "^3.4.6",
     "query-string": "5",
     "stylelint": "^9.6.0",
